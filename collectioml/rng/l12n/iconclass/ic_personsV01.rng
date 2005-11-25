@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+CollectioML Markup Language for Museum Collections
+
+Copyright (C) 2004-2005 Klaus E. Werner
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Contact the author at werner@collectio.org
+
+-->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0" ns="http://collectio.org/classifications/">
+    <define name="iconclass-persons">
+        <element name="iconclass">
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Cascading location classification
+                schema for public and private persons of the Roman Empire. This definition is not being used so far.
+                Very sketchy.</documentation>
+            <attribute name="schema">
+                <value>private and public persons</value>
+            </attribute>
+            <attribute name="coverage">
+                <value>roman antiquity</value>
+            </attribute>
+            <element name="person">
+                <choice>
+                    <element name="sex">
+                        <attribute name="name">
+                            <value type="token">male</value>
+                        </attribute>
+                        <choice>
+                            <element name="type">
+                                <attribute name="name">
+                                    <value type="token">public</value>
+                                </attribute>
+                                <choice>
+                                    <element name="function">
+                                        <attribute name="name">
+                                            <choice>
+                                                <value type="token">magistrate</value>
+                                                <value type="token">emperor</value>
+                                            </choice>
+                                        </attribute>
+                                    </element>
+                                </choice>
+                            </element>
+                            <element name="type">
+                                <attribute name="name">
+                                    <value type="token">private</value>
+                                </attribute>
+                            </element>
+                        </choice>
+                    </element>
+                    <element name="sex">
+                        <attribute name="name">
+                            <value type="token">female</value>
+                        </attribute>
+                        <choice>
+                            <element name="type">
+                                <attribute name="name">
+                                    <value type="token">public</value>
+                                </attribute>
+                                <choice>
+                                    <element name="function">
+                                        <attribute name="name">
+                                            <choice>
+                                                <value type="token">vestal</value>
+                                                <value type="token">empress</value>
+                                            </choice>
+                                        </attribute>
+                                    </element>
+                                </choice>
+                            </element>
+                            <element name="type">
+                                <attribute name="name">
+                                    <value type="token">private</value>
+                                </attribute>
+                            </element>
+                        </choice>
+                    </element>
+                </choice>
+            </element>
+        </element>
+    </define>
+</grammar>

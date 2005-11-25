@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="rscs/co2html.xsl" ?>
+<?xml-stylesheet type="text/css" href="rscs/collectio-xxe.css" ?>
+<?xxe-relaxng-schema name="-//collectioOrg//collectioML V0.1//EN" location="rng/collectio.rng" encoding="UTF-8" ?>
+<?oxygen RNGSchema="rng/collectio.rng" type="xml"?>
+<object xml:id="urn:collectio:0001:scu:01215" xml:lang="it-IT"
+        xmlns="http://collectio.org/collectioML/"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:ns="http://collectio.org/collectioML/"
+        xmlns:class="http://collectio.org/classifications/">
+  <page>
+    <begin>
+      <date>1998</date>
+
+      <date>1999-10</date>
+    </begin>
+
+    <administration>
+      <owner type="public-city">Musei Capitolini</owner>
+
+      <inventary name="Inventario 18/1233 del 21-02 1998">01215</inventary>
+
+      <responsibility type="scientific">Claudio Parisi Presicce</responsibility>
+
+      <jurisdiction type="restricted" />
+
+      <patrimony>
+        <value currency="EUR">350000</value>
+      </patrimony>
+
+      <insurance>
+        <value currency="EUR">150000</value>
+      </insurance>
+    </administration>
+
+    <iconography>
+      <class:objectclass coverage="roman late republic and imperial"
+                         schema="numismatic">
+        <class:material name="silver">
+          <class:denomination name="sestertium" />
+        </class:material>
+      </class:objectclass>
+
+      <class:iconclass coverage="roman antiquity"
+                       schema="private and public persons">
+        <class:person>
+          <class:sex name="female">
+            <class:type name="public">
+              <class:function name="vestal" />
+            </class:type>
+          </class:sex>
+        </class:person>
+      </class:iconclass>
+
+      <denomination type="common">Sarcofago a cassa con thiasos marino e
+      iscrizione di Promotus</denomination>
+
+      <description>
+        <para>Del sarcofago non è conservato il coperchio. La cassa è decorata
+        sulla fronte con un thiasos marino disposto simmetricamente sui due
+        lati di un clipeo. Al centro due centauri marini, entrambi sbarbati e
+        recanti sul dorso una nereide, posano un braccio sul clipeo, verso il
+        quale convergono. L’ittiocentauro a sinistra tiene nel braccio destro
+        un’ancora; la nereide seduta sul suo dorso è semipanneggiata e tiene
+        la lira. Accanto è un altro ittiocentauro volto verso sinistra, con un
+        remo nella destra e con il braccio sinistro posato sulle spalle di una
+        nereide nuda, velata sul dorso, con le gambe incrociate e con un
+        infante tra le braccia. L’ittiocentauro a destra del clipeo sostiene
+        con il braccio sinistro una tromba marina e volge il capo indietro,
+        verso una nereide semipanneggiata che, seduta sul suo dorso, si guarda
+        allo specchio. A destra nuota una nereide seminuda, aggrappata a un
+        toro marino, mentre un piccolo erote alato con una corona in mano è in
+        volo accanto a lei.</para>
+
+        <para>Sul clipeo si trovano l’iscrizione su due righe</para>
+
+        <inscription transcription="basic">
+          <line>PROMOTE</line>
+
+          <line>HABEAS</line>
+        </inscription>
+
+        <para>e una croce latina sottostante. Al di sotto del clipeo è una
+        maschera di Oceano con chele di granchio sulla fronte. Tra le onde
+        nuotano delfini e piccoli eroti non alati.</para>
+
+        <para>I due fianchi della cassa sono decorati a bassissimo rilievo,
+        ciascuno con un ippocampo cavalcato da un piccolo erote non
+        alato.</para>
+
+        <para>L’altorilievo della fronte, reso plasticamente ma di fattura
+        rigida e asciutta, come anche nel <link rel="formally-related-to"
+        xlink:href="urn:collectio:0001:scu:01215">sarcofago </link> trovato
+        più tardi nella stessa zona, mostra l’impiego del trapano nelle
+        acconciature e nelle pupille delle figure, e nelle anatomie degli
+        animali, con esclusione delle code.</para>
+
+        <para>Lo schema compositivo, derivato direttamente da <link
+        rel="based-on" xlink:href="urn:collectio:0001:scu:01215">modelli
+        iconografici ellenistici</link>, si ripete in un gruppo numeroso di
+        sarcofagi con temi marini. In tale ambito, resta aperto il dibattito
+        relativo al significato assegnato al motivo dalla cultura pagana
+        medio-imperiale, periodo di produzione di questo tipo di sarcofagi. Da
+        taluni studiosi è considerato prevalente l’intento decorativo, mentre
+        altri sottolineano la possibilità che i corteggi di figure marine
+        naviganti sulle onde alludano al viaggio del defunto nell’aldilà,
+        verso l’isola dei Beati.</para>
+      </description>
+    </iconography>
+
+    <techdata>
+      <class:materialclass coverage="all times" schema="materials">
+        <class:material name="stone">
+          <class:type name="giallo antico" />
+        </class:material>
+      </class:materialclass>
+
+      <class:techniqueclass coverage="all times" schema="techniques">
+        <class:material name="stone">
+          <class:method name="drilling" />
+        </class:material>
+      </class:techniqueclass>
+
+      <part>
+        <height unit="millimeter">21.10</height>
+
+        <width unit="millimeter">15.0</width>
+
+        <length unit="millimeter">2.5</length>
+
+        <depth unit="millimeter">3.8</depth>
+
+        <weight unit="gramm">72.2</weight>
+      </part>
+
+      <part>
+        <height unit="millimeter">50.10</height>
+
+        <width unit="millimeter">32.0</width>
+
+        <length unit="millimeter">12.4</length>
+
+        <diameter unit="millimeter">15.66</diameter>
+
+        <weight unit="gramm">144.0</weight>
+      </part>
+
+      <observation type="conservation">
+        <description>
+          <para>Lo stato di conservazione è generalmente buono.</para>
+        </description>
+      </observation>
+
+      <observation type="execution">
+        <description>
+          <para>L'esecuzione tecnica presenta le stesse caratteristiche come
+          <link rel="technically-related-to"
+          xlink:href="urn:collectio:0001:scu:01216">l'altra cassa</link> della
+          collezione.</para>
+        </description>
+      </observation>
+    </techdata>
+  </page>
+
+  <page>
+    <end>
+      <date>1874</date>
+    </end>
+
+    <begin>
+      <date>1872</date>
+
+      <date>1873</date>
+    </begin>
+
+    <event type="finding">
+      <description>
+        <para>La cassa è stata rinvenuta in un’area di sepolture cristiane
+        presso la Basilica di S. Lorenzo fuori le mura. Il coperchio,
+        originariamente rinvenuto in un’area immediamente contigua, pare che
+        oggi non sia conservato. Per il ritrovamento, vd. anche il frammento
+        di una <link rel="related-to"
+        xlink:href="urn:collectio:0001:scu:01234">iscrizione greca</link>
+        trovato nello stesso luogo.</para>
+      </description>
+    </event>
+
+    <location>
+      <class:locationclass coverage="Modern times" schema="Italy (Rome)">
+        <class:country name="Italy">
+          <class:region name="Lazio">
+            <class:city name="Roma">
+              <class:municipio name="Municipio IX" />
+            </class:city>
+          </class:region>
+        </class:country>
+      </class:locationclass>
+
+      <georeference>
+        <geo>
+          <latitude direction="N">
+            <degree>46</degree>
+
+            <minute>23</minute>
+
+            <second>47</second>
+          </latitude>
+
+          <longitude direction="E">
+            <degree>30</degree>
+
+            <minute>2</minute>
+
+            <second>12</second>
+          </longitude>
+        </geo>
+
+        <notes>
+          <para>Il probabile casale dove è avvenuto il ritovamento.</para>
+        </notes>
+      </georeference>
+
+      <cadastre>
+        <denomination type="common">Tenuta di Porcareccia</denomination>
+
+        <map>Catasto Urbano</map>
+
+        <parcel>VII</parcel>
+
+        <notes>
+          <para>Sulla mappa si trovano raffigurati varij casali, di cui uno il
+          presunto luogo di ritrovamento.</para>
+
+          <para>Cf. <link rel="related-to"
+          xlink:href="urn:collectio:0001:scu:01200">l'altro
+          ritrovamento</link> della stessa zona.</para>
+        </notes>
+      </cadastre>
+    </location>
+  </page>
+
+  <page>
+    <end>
+      <date>0500</date>
+    </end>
+
+    <begin>
+      <date>0300</date>
+    </begin>
+
+    <event type="reuse">
+      <class:authorclass coverage="mediterranean area, classical roman and greek times"
+                         schema="cultural" type="execution">
+        <class:culture name="roman">
+          <class:culturalsphere name="provincial" />
+        </class:culture>
+      </class:authorclass>
+
+      <class:authorclass coverage="mediterranean area, classical roman and greek times"
+                         schema="cultural" type="commission">
+        <class:culture name="roman">
+          <class:culturalsphere name="urban" />
+        </class:culture>
+      </class:authorclass>
+
+      <description>
+        <para>L’iscrizione sul clipeo denuncia sia la fede cristiana del
+        defunto per la presenza della croce, sia un’epoca tardiva per i
+        caratteri paleografici, forse il IV o addirittura il V secolo d.C.
+        Essa è stata verosimilmente aggiunta in fase di riutilizzo del
+        sarcofago, creato originariamente da una bottega urbana per un
+        possibile committente di fede pagana.</para>
+      </description>
+    </event>
+
+    <techdata>
+      <class:materialclass coverage="all times" schema="materials">
+        <class:material name="stone">
+          <class:type name="marmo bianco" />
+        </class:material>
+      </class:materialclass>
+
+      <part>
+        <height unit="palmo romano">11</height>
+
+        <width unit="palmo romano">6</width>
+      </part>
+
+      <part>
+        <height unit="palmo romano">12</height>
+
+        <width unit="palmo romano">3</width>
+      </part>
+
+      <observation type="conservation">
+        <description>
+          <para>Conservazione buona.</para>
+        </description>
+      </observation>
+    </techdata>
+
+    <location>
+      <class:locationclass coverage="Modern times" schema="Italy (Rome)">
+        <class:country name="Italy">
+          <class:region name="Lazio">
+            <class:city name="Roma">
+              <class:municipio name="Municipio I">
+                <class:rione name="Rione I Monti">
+                  <class:via name="via Cavour" />
+                </class:rione>
+              </class:municipio>
+            </class:city>
+          </class:region>
+        </class:country>
+      </class:locationclass>
+
+      <georeference>
+        <utm>
+          <zone>UT34</zone>
+
+          <easting>9.23</easting>
+
+          <northing>2.67</northing>
+        </utm>
+
+        <notes>
+          <para>Il probabile casale dove è avvenuto il ritovamento.</para>
+        </notes>
+      </georeference>
+    </location>
+  </page>
+
+  <page>
+    <end>
+      <date>0250</date>
+    </end>
+
+    <begin>
+      <date>0225</date>
+    </begin>
+
+    <event type="creation">
+      <class:authorclass coverage="mediterranean area, classical roman and greek times"
+                         schema="cultural" type="execution">
+        <class:culture name="roman">
+          <class:culturalsphere name="urban" />
+        </class:culture>
+      </class:authorclass>
+
+      <description>
+        <para>Una certa durezza del modellato, visibile soprattutto nelle
+        nereidi, e i caratteri delle acconciature classicheggianti di queste
+        figure portano a datare il sarcofago nell'avanzata età severiana,
+        presumibilmente nel secondo venticinquennio del III secolo d.C.</para>
+      </description>
+    </event>
+  </page>
+
+  <bibliography>
+    <entry type="monograph">Stuart Jones, Pal.Cons., p. 262 ss., n. 7, tav. 105</entry>
+
+    <entry type="monograph">Rumpf 1935, p. 27</entry>
+
+    <entry type="monograph">Rumpf 1939, p. 10, n. 29, tav. VIII, 42</entry>
+
+    <entry type="monograph">Roma Aurea, pp. 620-622, n. 325 (M. Sapelli)</entry>
+  </bibliography>
+
+  <editing>
+    <editorship>
+      <date>2004-04-11</date>
+
+      <name type="responsible">Claudio Parisi Presicce</name>
+
+      <name type="editor">Mario Rossi</name>
+
+      <description>
+        <para>Prima descrizione.</para>
+
+        <para>Conversione dal supporto cartaceo.</para>
+      </description>
+    </editorship>
+  </editing>
+</object>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+CollectioML Markup Language for Museum Collections
+
+Copyright (C) 2004-2005 Klaus E. Werner
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Contact the author at werner@collectio.org
+
+-->
+
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0" ns="http://collectio.org/classifications/">
+    <define name="materialclasses-basic">
+        <element name="materialclass">
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Cascading location classification
+                schema for types of materials. Very sketchy.</documentation>
+            <attribute name="schema">
+                <value>materials</value>
+            </attribute>
+            <attribute name="coverage">
+                <value>all times</value>
+            </attribute>
+            <choice>
+                <element name="material">
+                    <attribute name="name">
+                        <value type="token">metal</value>
+                    </attribute>
+                    <optional>
+                        <element name="type">
+                            <attribute name="name">
+                                <choice>
+                                    <value type="token">gold</value>
+                                    <value type="token">silver</value>
+                                    <value type="token">bronce</value>
+                                    <value type="token">iron</value>
+                                    <value type="token">copper</value>
+                                </choice>
+                            </attribute>
+                        </element>
+                    </optional>
+                </element>
+                <element name="material">
+                    <attribute name="name">
+                        <value type="token">stone</value>
+                    </attribute>
+                    <optional>
+                        <element name="type">
+                            <attribute name="name">
+                                <choice>
+                                    <value type="token">marmo bianco</value>
+                                    <value type="token">pavonazzetto</value>
+                                    <value type="token">giallo antico</value>
+                                    <value type="token">rosso antico</value>
+                                    <value type="token">porfido rosso</value>
+                                </choice>
+                            </attribute>
+                        </element>
+                    </optional>
+                </element>
+                <element name="material">
+                    <attribute name="name">
+                        <value type="token">bone</value>
+                    </attribute>
+                </element>
+            </choice>
+        </element>
+    </define>
+</grammar>
+

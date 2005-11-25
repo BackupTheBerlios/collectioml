@@ -1,0 +1,493 @@
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0">
+    
+  <define name="locationclass-italy">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Here some kind of DOKU</documentation>
+      <element name="locationclass">
+      <attribute name="schema">
+        <value type="token">geopolitical</value>
+      </attribute>
+      <attribute name="coverage">
+        <value type="token">italy</value>
+      </attribute>
+      <attribute name="version">
+        <value type="token">experimental</value>
+      </attribute>
+      <element name="country">
+          <choice>
+              <group>
+        <attribute name="name">
+          <value type="token">Italy</value>
+        </attribute>
+    <element name="region">
+          <choice>
+            <group>
+              <attribute name="name">
+                <value type="token">Piemonte</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Valle d'Aosta</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Lombardia</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Trentino Alto Adige</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Veneto</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Friuli Venezia Giulia</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Liguria</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Emilia Romagna</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Toscana</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Umbria</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Marche</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Lazio</value>
+              </attribute>
+                <optional>
+              <element name="city">
+                <choice>
+                  <group>
+                    <attribute name="name">
+                      <value type="token">Roma</value>
+                    </attribute>
+                    <optional>
+                      <element name="area">
+                        <choice>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio I</value>
+                            </attribute>
+                            <element name="quarter">
+                              <choice>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione I Monti</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione II Trevi</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione III Colonna</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione IV Campo Marzio</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione V Ponte</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione VI Parione</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione VII Regola</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione VIII s.Eustachio</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione IX Pigna</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione X Campitelli</value>
+                                  </attribute>
+                                  <optional>
+                                    <choice>
+                                      <element name="address">
+                                        <choice>
+                                          <group>
+                                            <attribute name="name">
+                                              <value type="token">Piazza Campitelli</value>
+                                            </attribute>
+                                          </group>
+                                          <group>
+                                            <attribute name="name">
+                                              <value type="token">Piazza Costaguti</value>
+                                            </attribute>
+                                          </group>
+                                          <group>
+                                            <attribute name="name">
+                                              <value type="token">via de'Cerchi</value>
+                                            </attribute>
+                                          </group>
+                                          <group>
+                                            <attribute name="name">
+                                              <value type="token">via delle Tre Pile</value>
+                                            </attribute>
+                                            <element name="structure">
+                                              <choice>
+                                                <group>
+                                                  <attribute name="name">
+                                                    <value type="token">Palazzo de'Conservatori</value>
+                                                  </attribute>
+                                                  <element name="substructure">
+                                                    <choice>
+                                                      <group>
+                                                        <attribute name="name">
+                                                          <value type="token">Scalone</value>
+                                                        </attribute>
+                                                        <element name="floor">
+                                                          <attribute name="name">
+                                                            <choice>
+                                                              <value type="token">I</value>
+                                                              <value type="token">II</value>
+                                                              <value type="token">III</value>
+                                                            </choice>
+                                                          </attribute>
+                                                        </element>
+                                                      </group>
+                                                      <group>
+                                                        <attribute name="name">
+                                                          <value type="token">Sala I</value>
+                                                        </attribute>
+                                                      </group>
+                                                      <group>
+                                                        <attribute name="name">
+                                                          <value type="token">Sala II</value>
+                                                        </attribute>
+                                                      </group>
+                                                      <group>
+                                                        <attribute name="name">
+                                                          <value type="token">Sala III</value>
+                                                        </attribute>
+                                                      </group>
+                                                    </choice>
+                                                  </element>
+                                                </group>
+                                                <group>
+                                                  <attribute name="name">
+                                                    <value type="token">Palazzo Nuovo</value>
+                                                  </attribute>
+                                                </group>
+                                              </choice>
+                                            </element>
+                                          </group>
+                                        </choice>
+                                        <attribute name="number">
+                                          <text/>
+                                        </attribute>
+                                      </element>
+                                    </choice>
+                                  </optional>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XI s.Angelo</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XII Ripa</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XIII Trastevere</value>
+                                  </attribute>
+                                  <optional>
+                                    <choice>
+                                      <element name="address">
+                                        <attribute name="name">
+                                          <choice>
+                                            <value type="token">Piazza s.Callisto</value>
+                                            <value type="token">Piazza s.Cosimato</value>
+                                            <value type="token">Piazza s.Maria in Trastevere</value>
+                                            <value type="token">Piazza Trilussa</value>
+                                            <value type="token">viale Trastevere</value>
+                                            <value type="token">via della Lungara</value>
+                                            <value type="token">via Lungaretta</value>
+                                            <value type="token">via Del Cinque</value>
+                                          </choice>
+                                        </attribute>
+                                        <attribute name="number">
+                                          <text/>
+                                        </attribute>
+                                      </element>
+                                    </choice>
+                                  </optional>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XIV Borgo</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XV Esquilino</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XVI Ludovisi</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XVII Sallustiano</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XVIII Castro Pretorio</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XIX Celio</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XX Testaccio</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XXI s.Saba</value>
+                                  </attribute>
+                                </group>
+                                <group>
+                                  <attribute name="name">
+                                    <value type="token">Rione XXII Prati</value>
+                                  </attribute>
+                                </group>
+                              </choice>
+                            </element>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio II</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio III</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio IV</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio V</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio VI</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio VII</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio VIII</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio IX</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio X</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio XI</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio XII</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio XIII</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio XIV</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio XV</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio XVI</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio XVII</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio XVIII</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio XIX</value>
+                            </attribute>
+                          </group>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Municipio XX</value>
+                            </attribute>
+                          </group>
+                        </choice>
+                      </element>
+                    </optional>
+                  </group>
+                  <group>
+                    <attribute name="name">
+                      <value type="token">Rieti</value>
+                    </attribute>
+                    <optional>
+                      <element name="quarter">
+                        <choice>
+                          <group>
+                            <attribute name="name">
+                              <value type="token">Borgo Vecchio</value>
+                            </attribute>
+                            <optional>
+                              <element name="square">
+                                <attribute name="name">
+                                  <choice>
+                                    <value type="token">Piazza Regina Margherita</value>
+                                    <value type="token">Piazza Garibaldi</value>
+                                    <value type="token">Piazza dell'Arco</value>
+                                  </choice>
+                                </attribute>
+                              </element>
+                            </optional>
+                          </group>
+                        </choice>
+                      </element>
+                    </optional>
+                  </group>
+                </choice>
+        </element>
+                </optional>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Abruzzo</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Molise</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Campania</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Puglia</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Basilicata</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Calabria</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Sicilia</value>
+              </attribute>
+            </group>
+            <group>
+              <attribute name="name">
+                <value type="token">Sardegna</value>
+              </attribute>
+            </group>
+          </choice>
+        </element>
+              </group>
+              <group>
+                  <attribute name="name">
+                      <value type="token">Greece</value>
+                  </attribute>
+              </group>
+              </choice>
+      </element>
+    </element>
+  </define>
+</grammar>
+    
