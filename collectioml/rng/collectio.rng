@@ -22,23 +22,25 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 Contact the author at werner@collectio.org
 
 -->
-<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://collectio.org/collectioML/"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:class="http://collectio.org/classes/"
-    xmlns="http://relaxng.org/ns/structure/1.0">
-    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">CollectioML: An XML RelaxNG Schema for
-        museum documentation provided by CollectioOrg. Copyright Klaus E. Werner</documentation>
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://collectio.org/collectioML/" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:class="http://collectio.org/classes/" xmlns="http://relaxng.org/ns/structure/1.0">
+    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">CollectioML: An XML
+        RelaxNG Schema for museum documentation provided by CollectioOrg. Copyright Klaus E.
+        Werner</documentation>
     <start>
         <element name="object">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Defining the "object" record
-                type. other types are: "space" and "aggregation"</documentation>
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Defining the
+                "object" record type. other types are: "space" and "aggregation"</documentation>
             <ref name="id"/>
             <attribute name="xml:lang">
                 <data type="language"/>
             </attribute>
             <oneOrMore>
                 <element name="page">
-                    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Introducing the "page"
-                        element, which contains the main building blocks (administration, techno etc.) for a time frame</documentation>
+                    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">
+                        Introducing the "page" element, which contains the main building blocks
+                        (administration, techno etc.) for a time frame</documentation>
                     <optional>
                         <element name="end">
                             <ref name="date"/>
@@ -152,94 +154,229 @@ Contact the author at werner@collectio.org
     </start>
     <define name="administration">
         <element name="administration">
-            <oneOrMore>
-                <choice>
-                    <element name="owner">
-                        <attribute name="type">
-                            <choice>
-                                <value type="string">public-state</value>
-                                <value type="string">public-province</value>
-                                <value type="string">public-region</value>
-                                <value type="string">public-city</value>
-                                <value type="string">private-entity</value>
-                                <value type="string">private-person</value>
-                            </choice>
-                        </attribute>
+            <choice>
+                <group>
+                    <interleave>
                         <ref name="owner"/>
-                    </element>
-                    <element name="inventary">
-                        <attribute name="name">
-                            <ref name="inv-name"/>
-                        </attribute>
-                        <ref name="inv-number"/>
-                    </element>
-                    <oneOrMore>
-                        <element name="responsibility">
-                            <attribute name="type">
-                                <choice>
-                                    <value type="string">scientific</value>
-                                    <value type="string">security</value>
-                                </choice>
-                            </attribute>
-                            <data type="string"/>
-                        </element>
-                    </oneOrMore>
-                    <element name="jurisdiction">
-                        <attribute name="type">
-                            <choice>
-                                <value type="string">restricted</value>
-                                <value type="string">unrestricted</value>
-                            </choice>
-                        </attribute>
-                    </element>
-                    <element name="patrimony">
-                        <ref name="value"/>
-                    </element>
-                    <element name="insurance">
-                        <ref name="value"/>
-                    </element>
-                </choice>
-            </oneOrMore>
+                        <optional>
+                            <ref name="insurance"/>
+                        </optional>
+                        <optional>
+                            <ref name="inventary"/>
+                        </optional>
+                        <optional>
+                            <ref name="jurisdiction"/>
+                        </optional>
+                        <optional>
+                            <ref name="patrimony"/>
+                        </optional>
+                        <optional>
+                            <ref name="responsibility"/>
+                        </optional>
+                    </interleave>
+                </group>
+                <group>
+                    <interleave>
+                        <ref name="responsibility"/>
+                        <optional>
+                            <ref name="insurance"/>
+                        </optional>
+                        <optional>
+                            <ref name="inventary"/>
+                        </optional>
+                        <optional>
+                            <ref name="jurisdiction"/>
+                        </optional>
+                        <optional>
+                            <ref name="patrimony"/>
+                        </optional>
+                        <optional>
+                            <ref name="owner"/>
+                        </optional>
+                    </interleave>
+                </group>
+                <group>
+                    <interleave>
+                        <ref name="insurance"/>
+                        <optional>
+                            <ref name="responsibility"/>
+                        </optional>
+                        <optional>
+                            <ref name="inventary"/>
+                        </optional>
+                        <optional>
+                            <ref name="jurisdiction"/>
+                        </optional>
+                        <optional>
+                            <ref name="patrimony"/>
+                        </optional>
+                        <optional>
+                            <ref name="owner"/>
+                        </optional>
+                    </interleave>
+                </group>
+                <group>
+                    <interleave>
+                        <ref name="inventary"/>
+                        <optional>
+                            <ref name="insurance"/>
+                        </optional>
+                        <optional>
+                            <ref name="responsibility"/>
+                        </optional>
+                        <optional>
+                            <ref name="jurisdiction"/>
+                        </optional>
+                        <optional>
+                            <ref name="patrimony"/>
+                        </optional>
+                        <optional>
+                            <ref name="owner"/>
+                        </optional>
+                    </interleave>
+                </group>
+                <group>
+                    <interleave>
+                        <ref name="jurisdiction"/>
+                        <optional>
+                            <ref name="insurance"/>
+                        </optional>
+                        <optional>
+                            <ref name="inventary"/>
+                        </optional>
+                        <optional>
+                            <ref name="responsibility"/>
+                        </optional>
+                        <optional>
+                            <ref name="patrimony"/>
+                        </optional>
+                        <optional>
+                            <ref name="owner"/>
+                        </optional>
+                    </interleave>
+                </group>
+                <group>
+                    <interleave>
+                        <ref name="patrimony"/>
+                        <optional>
+                            <ref name="insurance"/>
+                        </optional>
+                        <optional>
+                            <ref name="inventary"/>
+                        </optional>
+                        <optional>
+                            <ref name="jurisdiction"/>
+                        </optional>
+                        <optional>
+                            <ref name="responsibility"/>
+                        </optional>
+                        <optional>
+                            <ref name="owner"/>
+                        </optional>
+                    </interleave>
+                </group>
+            </choice>
         </element>
     </define>
     <define name="owner">
-        <ref name="mcap-owner"/>
+        <element name="owner">
+            <attribute name="type">
+                <choice>
+                    <value type="string">public-state</value>
+                    <value type="string">public-province</value>
+                    <value type="string">public-region</value>
+                    <value type="string">public-city</value>
+                    <value type="string">private-entity</value>
+                    <value type="string">private-person</value>
+                </choice>
+            </attribute>
+            <ref name="mcap-owner"/>
+        </element>
+        
     </define>
-    <define name="inv-name">
-        <ref name="mcap-inv-name"/>
+    <define name="inventary">
+        <element name="inventary">
+            <attribute name="name">
+                <ref name="mcap-inv-name"/>
+            </attribute>
+            <ref name="mcap-inv-number"/>
+        </element>
+        
     </define>
-    <define name="inv-number">
-        <ref name="mcap-inv-number"/>
+    <define name="responsibility">
+        <oneOrMore>
+            <element name="responsibility">
+                <attribute name="type">
+                    <choice>
+                        <value type="string">scientific</value>
+                        <value type="string">security</value>
+                    </choice>
+                </attribute>
+                <data type="string"/>
+            </element>
+        </oneOrMore>
+        
+    </define>
+    <define name="jurisdiction">
+        <element name="jurisdiction">
+            <attribute name="type">
+                <choice>
+                    <value type="string">restricted</value>
+                    <value type="string">unrestricted</value>
+                </choice>
+            </attribute>
+        </element>
+        
+    </define>
+    <define name="patrimony">
+        <element name="patrimony">
+            <ref name="value"/>
+        </element>
+        
+    </define>
+    <define name="insurance">
+        <element name="insurance">
+            <ref name="value"/>
+        </element>
+        
     </define>
     <define name="location">
         <element name="location">
             <choice>
                 <group>
-                    <ref name="cadastre"/>
-                    <optional>
-                        <ref name="locationclass"/>
-                    </optional>
-                    <optional>
-                        <ref name="georeference"/>
-                    </optional>
+                    <interleave>
+                        <ref name="cadastre"/>
+                        <optional>
+                            <ref name="locationclass"/>
+                        </optional>
+                        <optional>
+                            <ref name="georeference"/>
+                        </optional>
+                    </interleave>
                 </group>
                 <group>
-                    <ref name="georeference"/>
-                    <optional>
-                        <ref name="cadastre"/>
-                    </optional>
-                    <optional>
-                        <ref name="locationclass"/>
-                    </optional>
+                    <interleave>
+                        <ref name="georeference"/>
+                        <optional>
+                            <ref name="cadastre"/>
+                        </optional>
+                        <optional>
+                            <ref name="locationclass"/>
+                        </optional>
+                        
+                    </interleave>
                 </group>
                 <group>
-                    <ref name="locationclass"/>
-                    <optional>
-                        <ref name="georeference"/>
-                    </optional>
-                    <optional>
-                        <ref name="cadastre"/>
-                    </optional>
+                    <interleave>
+                        <ref name="locationclass"/>
+                        <optional>
+                            <ref name="georeference"/>
+                        </optional>
+                        <optional>
+                            <ref name="cadastre"/>
+                        </optional>
+                        
+                    </interleave>
                 </group>
             </choice>
         </element>
@@ -345,8 +482,8 @@ Contact the author at werner@collectio.org
     </define>
     <define name="cadastre">
         <element name="cadastre">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">this needs some further work to
-                cover all complex cadastral schemas</documentation>
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">this needs some
+                further work to cover all complex cadastral schemas</documentation>
             <ref name="denomination"/>
             <element name="map">
                 <data type="string"/>
@@ -361,8 +498,8 @@ Contact the author at werner@collectio.org
     </define>
     <define name="editing">
         <element name="editing">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">first and subsequent editing are
-                distinct by their relative dates only</documentation>
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">first and
+                subsequent editing are distinct by their relative dates only</documentation>
             <oneOrMore>
                 <element name="editorship">
                     <ref name="date"/>
@@ -427,23 +564,25 @@ Contact the author at werner@collectio.org
                 <ref name="authorship"/>
             </zeroOrMore>
             <ref name="description"/>
+            
+            <!-- only needed for REALLY complex arrangements ... -->
+            <!--
             <optional>
-                <ref name="details"/>
-            </optional>
-        </element>
-    </define>
-    <define name="details">
-        <oneOrMore>
+            <oneOrMore>
             <element name="dataset">
-                <attribute name="set">
-                    <data type="token"/>
-                </attribute>
-                <zeroOrMore>
-                    <ref name="authorship"/>
-                </zeroOrMore>
-                <ref name="description"/>
+            <attribute name="set">
+            <data type="token"/>
+            </attribute>
+            <zeroOrMore>
+            <ref name="authorship"/>
+            </zeroOrMore>
+            <ref name="description"/>
             </element>
-        </oneOrMore>
+            </oneOrMore>
+            </optional>
+            -->
+            
+        </element>
     </define>
     <define name="techdata">
         <element name="techdata">
@@ -451,23 +590,27 @@ Contact the author at werner@collectio.org
                 <ref name="tech-data"/>
             </choice>
             <ref name="tech-text"/>
+            <!-- again, only needed for REALLY complex arrangements ... -->
+            <!--
             <zeroOrMore>
-                <element name="dataset">
-                    <attribute name="set">
-                        <data type="token"/>
-                    </attribute>
-                    <choice>
-                        <ref name="tech-data"/>
-                    </choice>
-                    <ref name="tech-text"/>
-                </element>
+            <element name="dataset">
+            <attribute name="set">
+            <data type="token"/>
+            </attribute>
+            <choice>
+            <ref name="tech-data"/>
+            </choice>
+            <ref name="tech-text"/>
+            </element>
             </zeroOrMore>
+            -->
         </element>
     </define>
     <define name="tech-text">
         <element name="observation">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Eventually, put here a
-                classification system in the way of: outstanding - very good - good - average - damaged - bad</documentation>
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Eventually, put
+                here a classification system in the way of: outstanding - very good - good - average - damaged -
+                bad</documentation>
             <attribute name="type">
                 <choice>
                     <value>conservation</value>
@@ -484,9 +627,6 @@ Contact the author at werner@collectio.org
                 </attribute>
                 <ref name="description"/>
             </element>
-        </optional>
-        <optional>
-            <ref name="notes"/>
         </optional>
     </define>
     <define name="tech-data">
@@ -518,7 +658,10 @@ Contact the author at werner@collectio.org
                                 <ref name="width"/>
                             </optional>
                         </interleave>
-                    </group>
+        <optional>
+            <ref name="notes"/>
+        </optional>
+                                            </group>
                     <group>
                         <interleave>
                             <ref name="width"/>
@@ -623,24 +766,24 @@ Contact the author at werner@collectio.org
                 
                 <!-- easy, but not correct (lack of at-least-one): -->
                 <!-- 
-              <interleave>
+                <interleave>
                 <optional>
-                    <ref name="height"/>
+                <ref name="height"/>
                 </optional>
                 <optional>
-                    <ref name="width"/>
+                <ref name="width"/>
                 </optional>
                 <optional>
-                    <ref name="length"/>
+                <ref name="length"/>
                 </optional>
                 <optional>
-                    <ref name="depth"/>
+                <ref name="depth"/>
                 </optional>
                 <optional>
-                    <ref name="diameter"/>
+                <ref name="diameter"/>
                 </optional>
                 <optional>
-                    <ref name="weight"/>
+                <ref name="weight"/>
                 </optional>
                 </interleave> 
                 -->
@@ -793,8 +936,8 @@ Contact the author at werner@collectio.org
     </define>
     <define name="id">
         <attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">binding the "object" record to a
-                unique id</documentation>
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> binding the
+                "object" record to a unique id</documentation>
             <ref name="mcap-id"/>
         </attribute>
     </define>

@@ -22,6 +22,8 @@
 
       <responsibility type="scientific">Claudio Parisi Presicce</responsibility>
 
+      <responsibility type="security">Claudio Baglione</responsibility>
+
       <jurisdiction type="restricted" />
 
       <patrimony>
@@ -56,16 +58,21 @@
       iscrizione di Promotus</denomination>
 
       <description>
-        <para>Del sarcofago non è conservato il coperchio. La cassa è decorata sulla fronte con un thiasos marino
-            disposto simmetricamente sui due lati di un clipeo. Al centro due centauri marini, entrambi sbarbati e
-            recanti sul dorso una nereide, posano un braccio sul clipeo, verso il quale convergono.
-            L’ittiocentauro a sinistra tiene nel braccio destro un’ancora; la nereide seduta sul suo dorso è
-            semipanneggiata e tiene la lira. Accanto è un altro ittiocentauro volto verso sinistra, con un remo
-            nella destra e con il braccio sinistro posato sulle spalle di una nereide nuda, velata sul dorso, con le
-            gambe incrociate e con un infante tra le braccia. L’ittiocentauro a destra del clipeo sostiene con il
-            braccio sinistro una tromba marina e volge il capo indietro, verso una nereide semipanneggiata che,
-            seduta sul suo dorso, si guarda allo specchio. A destra nuota una nereide seminuda, aggrappata a un toro
-            marino, mentre un piccolo erote alato con una corona in mano è in volo accanto a lei.</para>
+        <para>Del sarcofago non è conservato il coperchio. La cassa è decorata
+        sulla fronte con un thiasos marino disposto simmetricamente sui due
+        lati di un clipeo. Al centro due centauri marini, entrambi sbarbati e
+        recanti sul dorso una nereide, posano un braccio sul clipeo, verso il
+        quale convergono. L’ittiocentauro a sinistra tiene nel braccio destro
+        un’ancora; la nereide seduta sul suo dorso è semipanneggiata e tiene
+        la lira. Accanto è un altro ittiocentauro volto verso sinistra, con un
+        remo nella destra e con il braccio sinistro posato sulle spalle di una
+        nereide nuda, velata sul dorso, con le gambe incrociate e con un
+        infante tra le braccia. L’ittiocentauro a destra del clipeo sostiene
+        con il braccio sinistro una tromba marina e volge il capo indietro,
+        verso una nereide semipanneggiata che, seduta sul suo dorso, si guarda
+        allo specchio. A destra nuota una nereide seminuda, aggrappata a un
+        toro marino, mentre un piccolo erote alato con una corona in mano è in
+        volo accanto a lei.</para>
 
         <para>Sul clipeo si trovano l’iscrizione su due righe</para>
 
@@ -138,6 +145,14 @@
         <diameter unit="millimeter">15.66</diameter>
 
         <weight unit="gramm">144.0</weight>
+      </part>
+
+      <part>
+        <depth unit="centimeter">4.3</depth>
+
+        <notes>
+          <para>Only depth can be measured with any certainty.</para>
+        </notes>
       </part>
 
       <observation type="conservation">
