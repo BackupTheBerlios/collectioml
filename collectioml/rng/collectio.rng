@@ -22,25 +22,23 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 Contact the author at werner@collectio.org
 
 -->
-<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
-    ns="http://collectio.org/collectioML/" xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:class="http://collectio.org/classes/" xmlns="http://relaxng.org/ns/structure/1.0">
-    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">CollectioML: An XML
-        RelaxNG Schema for museum documentation provided by CollectioOrg. Copyright Klaus E.
-        Werner</documentation>
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://collectio.org/collectioML/"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:class="http://collectio.org/classes/"
+    xmlns="http://relaxng.org/ns/structure/1.0">
+    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">CollectioML: An XML RelaxNG Schema for
+        museum documentation provided by CollectioOrg. Copyright Klaus E. Werner</documentation>
     <start>
         <element name="object">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Defining the
-                "object" record type. other types are: "space" and "aggregation"</documentation>
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Defining the "object" record
+                type. other types are: "space" and "aggregation"</documentation>
             <ref name="id"/>
             <attribute name="xml:lang">
                 <data type="language"/>
             </attribute>
             <oneOrMore>
                 <element name="page">
-                    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">
-                        Introducing the "page" element, which contains the main building blocks
-                        (administration, techno etc.) for a time frame</documentation>
+                    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Introducing the "page"
+                        element, which contains the main building blocks (administration, techno etc.) for a time frame</documentation>
                     <optional>
                         <element name="end">
                             <ref name="date"/>
@@ -280,6 +278,8 @@ Contact the author at werner@collectio.org
     </define>
     <define name="owner">
         <element name="owner">
+<!-- unnecessary bullshit -->
+<!-- 
             <attribute name="type">
                 <choice>
                     <value type="string">public-state</value>
@@ -290,18 +290,21 @@ Contact the author at werner@collectio.org
                     <value type="string">private-person</value>
                 </choice>
             </attribute>
+-->
             <ref name="mcap-owner"/>
         </element>
-        
     </define>
     <define name="inventary">
         <element name="inventary">
-            <attribute name="name">
+                <element name="name">
                 <ref name="mcap-inv-name"/>
-            </attribute>
-            <ref name="mcap-inv-number"/>
+                </element>
+            <oneOrMore>
+                <element name="number">
+                    <ref name="mcap-inv-number"/>
+                </element>
+            </oneOrMore>
         </element>
-        
     </define>
     <define name="responsibility">
         <oneOrMore>
@@ -315,7 +318,6 @@ Contact the author at werner@collectio.org
                 <data type="string"/>
             </element>
         </oneOrMore>
-        
     </define>
     <define name="jurisdiction">
         <element name="jurisdiction">
@@ -326,19 +328,16 @@ Contact the author at werner@collectio.org
                 </choice>
             </attribute>
         </element>
-        
     </define>
     <define name="patrimony">
         <element name="patrimony">
             <ref name="value"/>
         </element>
-        
     </define>
     <define name="insurance">
         <element name="insurance">
             <ref name="value"/>
         </element>
-        
     </define>
     <define name="location">
         <element name="location">
@@ -363,7 +362,6 @@ Contact the author at werner@collectio.org
                         <optional>
                             <ref name="locationclass"/>
                         </optional>
-                        
                     </interleave>
                 </group>
                 <group>
@@ -375,7 +373,6 @@ Contact the author at werner@collectio.org
                         <optional>
                             <ref name="cadastre"/>
                         </optional>
-                        
                     </interleave>
                 </group>
             </choice>
@@ -482,8 +479,8 @@ Contact the author at werner@collectio.org
     </define>
     <define name="cadastre">
         <element name="cadastre">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">this needs some
-                further work to cover all complex cadastral schemas</documentation>
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">this needs some further work to
+                cover all complex cadastral schemas</documentation>
             <ref name="denomination"/>
             <element name="map">
                 <data type="string"/>
@@ -498,8 +495,8 @@ Contact the author at werner@collectio.org
     </define>
     <define name="editing">
         <element name="editing">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">first and
-                subsequent editing are distinct by their relative dates only</documentation>
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">first and subsequent editing are
+                distinct by their relative dates only</documentation>
             <oneOrMore>
                 <element name="editorship">
                     <ref name="date"/>
@@ -525,12 +522,15 @@ Contact the author at werner@collectio.org
     </define>
     <define name="denomination">
         <element name="denomination">
-            <attribute name="type">
+<!-- the following seems really unnecessary, after all -->
+<!--
+    <attribute name="type">
                 <choice>
                     <value type="string">common</value>
                     <value type="string">official</value>
                 </choice>
             </attribute>
+-->
             <text/>
         </element>
     </define>
@@ -564,7 +564,6 @@ Contact the author at werner@collectio.org
                 <ref name="authorship"/>
             </zeroOrMore>
             <ref name="description"/>
-            
             <!-- only needed for REALLY complex arrangements ... -->
             <!--
             <optional>
@@ -581,7 +580,6 @@ Contact the author at werner@collectio.org
             </oneOrMore>
             </optional>
             -->
-            
         </element>
     </define>
     <define name="techdata">
@@ -608,9 +606,8 @@ Contact the author at werner@collectio.org
     </define>
     <define name="tech-text">
         <element name="observation">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Eventually, put
-                here a classification system in the way of: outstanding - very good - good - average - damaged -
-                bad</documentation>
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Eventually, put here a
+                classification system in the way of: outstanding - very good - good - average - damaged - bad</documentation>
             <attribute name="type">
                 <choice>
                     <value>conservation</value>
@@ -658,10 +655,10 @@ Contact the author at werner@collectio.org
                                 <ref name="width"/>
                             </optional>
                         </interleave>
-        <optional>
-            <ref name="notes"/>
-        </optional>
-                                            </group>
+                        <optional>
+                            <ref name="notes"/>
+                        </optional>
+                    </group>
                     <group>
                         <interleave>
                             <ref name="width"/>
@@ -681,6 +678,9 @@ Contact the author at werner@collectio.org
                                 <ref name="weight"/>
                             </optional>
                         </interleave>
+                        <optional>
+                            <ref name="notes"/>
+                        </optional>
                     </group>
                     <group>
                         <interleave>
@@ -701,6 +701,9 @@ Contact the author at werner@collectio.org
                                 <ref name="length"/>
                             </optional>
                         </interleave>
+                        <optional>
+                            <ref name="notes"/>
+                        </optional>
                     </group>
                     <group>
                         <interleave>
@@ -721,6 +724,9 @@ Contact the author at werner@collectio.org
                                 <ref name="height"/>
                             </optional>
                         </interleave>
+                        <optional>
+                            <ref name="notes"/>
+                        </optional>
                     </group>
                     <group>
                         <interleave>
@@ -741,6 +747,9 @@ Contact the author at werner@collectio.org
                                 <ref name="diameter"/>
                             </optional>
                         </interleave>
+                        <optional>
+                            <ref name="notes"/>
+                        </optional>
                     </group>
                     <group>
                         <interleave>
@@ -761,9 +770,11 @@ Contact the author at werner@collectio.org
                                 <ref name="depth"/>
                             </optional>
                         </interleave>
+                        <optional>
+                            <ref name="notes"/>
+                        </optional>
                     </group>
                 </choice>
-                
                 <!-- easy, but not correct (lack of at-least-one): -->
                 <!-- 
                 <interleave>
@@ -936,8 +947,8 @@ Contact the author at werner@collectio.org
     </define>
     <define name="id">
         <attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> binding the
-                "object" record to a unique id</documentation>
+            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> binding the "object" record to a
+                unique id</documentation>
             <ref name="mcap-id"/>
         </attribute>
     </define>

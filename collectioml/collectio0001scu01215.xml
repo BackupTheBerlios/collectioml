@@ -16,9 +16,15 @@
     </begin>
 
     <administration>
-      <owner type="public-city">Musei Capitolini</owner>
+      <owner>Musei Capitolini</owner>
 
-      <inventary name="Inventario 18/1233 del 21-02 1998">01215</inventary>
+      <inventary>
+        <name>Nuovo Inventario D.M. 18/122 del 1998</name>
+
+        <number>01215</number>
+
+        <number>01216</number>
+      </inventary>
 
       <responsibility type="scientific">Claudio Parisi Presicce</responsibility>
 
@@ -54,8 +60,8 @@
         </class:person>
       </class:iconclass>
 
-      <denomination type="common">Sarcofago a cassa con thiasos marino e
-      iscrizione di Promotus</denomination>
+      <denomination>Sarcofago a cassa con thiasos marino e iscrizione di
+      Promotus</denomination>
 
       <description>
         <para>Del sarcofago non è conservato il coperchio. La cassa è decorata
@@ -118,8 +124,8 @@
       </class:materialclass>
 
       <class:techniqueclass coverage="all times" schema="techniques">
-        <class:material name="stone">
-          <class:method name="drilling" />
+        <class:material name="paper">
+          <class:method name="aquatint" />
         </class:material>
       </class:techniqueclass>
 
@@ -145,13 +151,10 @@
         <diameter unit="millimeter">15.66</diameter>
 
         <weight unit="gramm">144.0</weight>
-      </part>
-
-      <part>
-        <depth unit="centimeter">4.3</depth>
 
         <notes>
-          <para>Only depth can be measured with any certainty.</para>
+          <para>Only height and width can be measured with any
+          certainty.</para>
         </notes>
       </part>
 
@@ -184,6 +187,13 @@
     </begin>
 
     <event type="finding">
+      <class:authorclass coverage="mediterranean area, classical roman and greek times"
+                         schema="cultural" type="invention">
+        <class:culture name="greek">
+          <class:culturalsphere name="hellenistic" />
+        </class:culture>
+      </class:authorclass>
+
       <description>
         <para>La cassa è stata rinvenuta in un’area di sepolture cristiane
         presso la Basilica di S. Lorenzo fuori le mura. Il coperchio,
@@ -231,7 +241,7 @@
       </georeference>
 
       <cadastre>
-        <denomination type="common">Tenuta di Porcareccia</denomination>
+        <denomination>Tenuta di Porcareccia</denomination>
 
         <map>Catasto Urbano</map>
 

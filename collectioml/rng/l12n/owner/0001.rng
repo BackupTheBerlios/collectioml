@@ -39,7 +39,7 @@
   </define>
   <define name="mcap-inv-name">
     <choice>
-      <value type="token">Inventario 18/1233 del 21-02 1998</value>
+      <value type="token">Nuovo Inventario D.M. 18/122 del 1998</value>
       <value type="token">Inventario Vecchio</value>
       <value type="token">Inventario Albani</value>
     </choice>
