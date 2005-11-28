@@ -129,7 +129,7 @@
         </class:material>
       </class:techniqueclass>
 
-      <part>
+      <part name="frgt 01215">
         <height unit="millimeter">21.10</height>
 
         <width unit="millimeter">15.0</width>
@@ -141,7 +141,7 @@
         <weight unit="gramm">72.2</weight>
       </part>
 
-      <part>
+      <part name="frgt 01216">
         <height unit="millimeter">50.10</height>
 
         <width unit="millimeter">32.0</width>
@@ -300,13 +300,13 @@
         </class:material>
       </class:materialclass>
 
-      <part>
+      <part name="01215">
         <height unit="palmo romano">11</height>
 
         <width unit="palmo romano">6</width>
       </part>
 
-      <part>
+      <part name="01216">
         <height unit="palmo romano">12</height>
 
         <width unit="palmo romano">3</width>

@@ -635,6 +635,9 @@ Contact the author at werner@collectio.org
         </zeroOrMore>
         <oneOrMore>
             <element name="part">
+                <attribute name="name">
+                    <data type="string"/>
+                </attribute>
                 <choice>
                     <group>
                         <interleave>
