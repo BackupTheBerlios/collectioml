@@ -34,17 +34,18 @@ Contact the author at werner@collectio.org
             <attribute name="coverage">
                 <value>roman antiquity</value>
             </attribute>
-            <element name="person">
                 <choice>
                     <element name="sex">
                         <attribute name="name">
                             <value type="token">male</value>
                         </attribute>
+                        <optional>
                         <choice>
                             <element name="type">
                                 <attribute name="name">
                                     <value type="token">public</value>
                                 </attribute>
+                                <optional>
                                 <choice>
                                     <element name="function">
                                         <attribute name="name">
@@ -54,24 +55,26 @@ Contact the author at werner@collectio.org
                                             </choice>
                                         </attribute>
                                     </element>
-                                </choice>
+                                </choice></optional>
                             </element>
                             <element name="type">
                                 <attribute name="name">
                                     <value type="token">private</value>
                                 </attribute>
                             </element>
-                        </choice>
+                        </choice></optional>
                     </element>
                     <element name="sex">
                         <attribute name="name">
                             <value type="token">female</value>
                         </attribute>
+                        <optional>
                         <choice>
                             <element name="type">
                                 <attribute name="name">
                                     <value type="token">public</value>
                                 </attribute>
+                                <optional>
                                 <choice>
                                     <element name="function">
                                         <attribute name="name">
@@ -82,6 +85,7 @@ Contact the author at werner@collectio.org
                                         </attribute>
                                     </element>
                                 </choice>
+                                </optional>
                             </element>
                             <element name="type">
                                 <attribute name="name">
@@ -89,9 +93,9 @@ Contact the author at werner@collectio.org
                                 </attribute>
                             </element>
                         </choice>
+                        </optional>
                     </element>
                 </choice>
-            </element>
         </element>
     </define>
 </grammar>

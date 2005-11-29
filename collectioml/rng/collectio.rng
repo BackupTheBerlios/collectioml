@@ -390,16 +390,16 @@ Contact the author at werner@collectio.org
                     </element>
                     <element name="easting">
                         <data type="decimal">
-                            <param name="minInclusive">0.00</param>
-                            <param name="maxInclusive">10.00</param>
-                            <param name="pattern">[0-9]{1,2}.[0-9]{1,2}</param>
+                            <param name="minInclusive">0000000</param>
+                            <param name="maxInclusive">9999999</param>
+                            <param name="pattern">[0-9]{7}</param>
                         </data>
                     </element>
                     <element name="northing">
                         <data type="decimal">
-                            <param name="minInclusive">0.00</param>
-                            <param name="maxInclusive">10.00</param>
-                            <param name="pattern">[0-9]{1,2}.[0-9]{1,2}</param>
+                            <param name="minInclusive">0000000</param>
+                            <param name="maxInclusive">9999999</param>
+                            <param name="pattern">[0-9]{7}</param>
                         </data>
                     </element>
                 </element>

@@ -10,10 +10,51 @@
         xmlns:class="http://collectio.org/classifications/">
   <page>
     <begin>
+      <date>2001</date>
+    </begin>
+
+    <administration>
+      <owner>Musei Capitolini</owner>
+
+      <responsibility type="scientific">Flavia Onofrii</responsibility>
+    </administration>
+  </page>
+
+  <page>
+    <begin>
       <date>1998</date>
 
       <date>1999-10</date>
     </begin>
+
+    <location>
+      <cadastre>
+        <denomination>Tenuta Affogalasino</denomination>
+
+        <map>Cart.15</map>
+
+        <parcel>n.340</parcel>
+      </cadastre>
+
+      <class:locationclass coverage="Modern times" schema="Italy (Rome)">
+        <class:country name="Italy">
+          <class:region name="Lazio">
+            <class:city name="Roma"></class:city>
+          </class:region>
+        </class:country>
+      </class:locationclass>
+    </location>
+
+    <event type="restoration">
+      <class:authorclass coverage="mediterranean area, classical roman and greek times"
+                         schema="cultural" type="commission">
+        <class:culture name="roman"></class:culture>
+      </class:authorclass>
+
+      <description>
+        <para>Restoration of the main housing.</para>
+      </description>
+    </event>
 
     <administration>
       <owner>Musei Capitolini</owner>
@@ -51,13 +92,9 @@
 
       <class:iconclass coverage="roman antiquity"
                        schema="private and public persons">
-        <class:person>
-          <class:sex name="female">
-            <class:type name="public">
-              <class:function name="vestal" />
-            </class:type>
-          </class:sex>
-        </class:person>
+        <class:sex name="female">
+          <class:type name="public"></class:type>
+        </class:sex>
       </class:iconclass>
 
       <denomination>Sarcofago a cassa con thiasos marino e iscrizione di
@@ -119,13 +156,13 @@
     <techdata>
       <class:materialclass coverage="all times" schema="materials">
         <class:material name="stone">
-          <class:type name="giallo antico" />
+          <class:type name="marmo bianco" />
         </class:material>
       </class:materialclass>
 
       <class:techniqueclass coverage="all times" schema="techniques">
         <class:material name="paper">
-          <class:method name="aquatint" />
+          <class:method name="engraving" />
         </class:material>
       </class:techniqueclass>
 
@@ -216,30 +253,6 @@
         </class:country>
       </class:locationclass>
 
-      <georeference>
-        <geo>
-          <latitude direction="N">
-            <degree>46</degree>
-
-            <minute>23</minute>
-
-            <second>47</second>
-          </latitude>
-
-          <longitude direction="E">
-            <degree>30</degree>
-
-            <minute>2</minute>
-
-            <second>12</second>
-          </longitude>
-        </geo>
-
-        <notes>
-          <para>Il probabile casale dove è avvenuto il ritovamento.</para>
-        </notes>
-      </georeference>
-
       <cadastre>
         <denomination>Tenuta di Porcareccia</denomination>
 
@@ -256,6 +269,16 @@
           ritrovamento</link> della stessa zona.</para>
         </notes>
       </cadastre>
+
+      <georeference>
+        <utm>
+          <zone>UT56</zone>
+
+          <easting>8023100</easting>
+
+          <northing>7102500</northing>
+        </utm>
+      </georeference>
     </location>
   </page>
 
@@ -336,11 +359,11 @@
 
       <georeference>
         <utm>
-          <zone>UT34</zone>
+          <zone>T34</zone>
 
-          <easting>9.23</easting>
+          <easting>9234510</easting>
 
-          <northing>2.67</northing>
+          <northing>2678050</northing>
         </utm>
 
         <notes>

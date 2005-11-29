@@ -67,7 +67,7 @@ page:before {
     margin-left: 2ex;
     margin-right: 120ex;
     padding-left: 2ex;
-    content: element-label() " " insert-after-button(text, "+", color, rgb(100,100,100));
+    content: element-label() " " insert-before-button(text, "+", color, rgb(100,100,100));
     font-weight: bold;
     margin-top: 1ex;
 }
@@ -124,7 +124,7 @@ editing:before {
     margin-left: 2ex;
     margin-right: 120ex;
     padding-left: 2ex;
-    content: element-label() " " replace-button(icon, icon(circle), color, rgb(100,100,100));
+    content: element-label() "  " insert-before-button(text, "+", color, rgb(100,100,100));
     font-weight: bold;
     margin-top: 1ex;
 }
@@ -157,7 +157,7 @@ techdata:before {
     margin-right: 105ex;
     margin-left: 4ex;
     padding-left: 2ex;
-    content: element-label() " " insert-after-button(text, "+", color, rgb(100,100,100));
+    content: element-label() "  " insert-before-button(text, "+", color, rgb(100,100,100));
     font-weight: bold;
 }
 
@@ -165,7 +165,7 @@ event:before {
     display: inline-block;
     border: 2px groove rgb(200, 200, 200);
     background-color: rgb(188, 188, 170);
-    content: element-label() ": " combo-box(attribute, type) " " insert-after-button(text, "+", color, rgb(100,100,100));
+    content: element-label() ": " combo-box(attribute, type) "  " insert-before-button(text, "+", color, rgb(100,100,100));
     margin-right: 105ex;
     margin-left: 4ex;
     margin-top: 2ex;
@@ -207,7 +207,7 @@ jurisdiction:before,
 patrimony:before,
 insurance:before {
     display: marker;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label() " : ";
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
     font-weight: bold;
     font-size: smaller;
 	color: rgb(100,100,100);
@@ -215,7 +215,7 @@ insurance:before {
 
 inventary:before {
     display: marker;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label() " : ";
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
     font-weight: bold;
     font-size: smaller;
 	color: rgb(100,100,100);
@@ -229,7 +229,7 @@ inventary name {
 owner:before,
 responsibility:before {
     display: marker;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label() " : ";
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
     font-weight: bold;
     font-size: smaller;
 	color: rgb(100,100,100);
@@ -241,7 +241,7 @@ number {
 
 number:after {
     display: inline;
-    content: " " insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100));
+    content: " " insert-after-button(text, "+", color, rgb(100,100,100));
 }
 
 number:before {
@@ -272,7 +272,7 @@ class|locationclass {
 
 class|locationclass:before {
     display: inline;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label();
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label();
     margin-bottom: 1ex;
     font-weight: bold;
     font-size: smaller;
@@ -295,7 +295,7 @@ georeference {
 
 cadastre:before {
     display: block;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label();
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label();
     margin-top: 2ex;
     margin-left: 19ex;
     font-weight: bold;
@@ -305,7 +305,7 @@ cadastre:before {
 
 georeference:before {
     display: block;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label();
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label();
     margin-top: 2ex;
     margin-left: 19ex;
     font-weight: bold;
@@ -322,7 +322,7 @@ parcel {
 map:before,
 parcel:before {
     display: marker;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label() " : ";
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
     font-weight: bold;
     font-size: smaller;
     color: rgb(100,100,100);
@@ -337,7 +337,7 @@ utm {
 geo:before,
 utm:before {
     display: marker;
-    content: element-label() " :  ";
+    content: replace-button(icon, icon(circle), color, rgb(100,100,100)) " " element-label() " :  ";
     font-weight: bold;
     font-size: smaller;
     color: rgb(100,100,100);
@@ -362,7 +362,7 @@ zone,
 easting,
 northing {
     display: block;
-    margin-left: 18ex;
+    margin-left: 19ex;
 }
 
 zone:before,
@@ -410,18 +410,18 @@ second:after {
 
 class|objectclass {
     display: block;
-    margin-left: 16ex;
+    margin-left: 20ex;
 }
 
 class|iconclass {
     display: block;
-    margin-left: 18ex;
+    margin-left: 22ex;
 }
 
 class|objectclass:before,
 class|iconclass:before {
     display: inline;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label();
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
     margin-left: 6ex;
     margin-bottom: 1ex;
     font-weight: bold;
@@ -447,7 +447,7 @@ denomination {
 
 denomination:before {
     display: marker;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label() " : ";
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
     font-weight: bold;
     font-size: smaller;
     color: rgb(100,100,100);
@@ -460,18 +460,18 @@ denomination:before {
 
 class|techniqueclass {
     display: block;
-    margin-left: 15ex;
+    margin-left: 16ex;
 }
 
 class|materialclass {
     display: block;
-    margin-left: 17ex;
+    margin-left: 18ex;
 }
 
 class|techniqueclass:before,
 class|materialclass:before {
     display: inline;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label();
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
     margin-left: 6ex;
     margin-bottom: 1ex;
     font-weight: bold;
@@ -497,7 +497,7 @@ part {
 
 part:before {
     display: block;
-    content:  " " insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label() " " counter(n, upper-alpha) "  " text-field(attribute, name, columns, 12, font-weight, normal, color, rgb(0,0,0), background-color, rgb(235,231,167));
+    content:  " " insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " " counter(n, upper-alpha) "  " text-field(attribute, name, columns, 12, font-weight, normal, color, rgb(0,0,0), background-color, rgb(235,231,167));
     margin-left: 17ex;
     margin-top: 1ex;
     font-weight: bold;
@@ -512,7 +512,7 @@ part > * {
 
 part > *:before {
     display: marker;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label() " : ";
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
     font-weight: bold;
     font-size: smaller;
     color: rgb(100,100,100);
@@ -537,7 +537,7 @@ observation {
 
 observation:before {
     display: block;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label() " " combo-box(attribute, type, background-color, rgb(235,231,167));
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " " combo-box(attribute, type, background-color, rgb(235,231,167));
     background-color: rgb(235,231,167);
     margin-left: 2ex;
     margin-top: 2ex;
@@ -552,12 +552,12 @@ observation:before {
 
 class|authorclass {
     display: block;
-    margin-left: 2ex;
+    margin-left: 4ex;
 }
 
 class|authorclass:before {
     display: inline;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label() " " combo-box(attribute, type, background-color, rgb(235,231,167));
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " " combo-box(attribute, type, background-color, rgb(235,231,167)) " : ";
     margin-bottom: 1ex;
     font-weight: bold;
     font-size: smaller;
@@ -659,7 +659,7 @@ description {
 notes:before,
 description:before {
     display: marker;
-    content: insert-before-button(text, "+", color, rgb(100,100,100)) " " delete-button(text, "-", color, rgb(100,100,100)) " " element-label() " : ";
+    content: insert-before-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
     font-weight: bold;
     font-size: smaller;
     color: rgb(100,100,100);
@@ -668,7 +668,7 @@ description:before {
 notes:after,
 description:after {
     display: inline;
-    content: "n.b. Click on line end for more text paragraphs or inscription lines, insert links using CTRL-I";
+    content: "n.b. Click on line end for more text paragraphs or inscription lines; insert links using CTRL-I";
     font-weight: bold;
     font-size: smaller;
     color: rgb(100,100,100);
