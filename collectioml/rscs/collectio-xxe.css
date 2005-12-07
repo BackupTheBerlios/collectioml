@@ -28,7 +28,11 @@ object:before {
     padding-top: 1ex;
     padding-bottom: 1ex;
     margin-bottom: 2ex;
-    content: element-label() " ID :   " text-field(attribute, xml|id, columns, 28, font-family, monospace, background-color, rgb(240, 238, 213));
+    content:  element-label()
+              " Record ID :   "
+              text-field(attribute, xml|id, columns, 28, font-family, monospace, background-color, rgb(240, 238, 213))
+              "   Record Header :   "
+              text-field(attribute, xml|head, columns, 28, font-family, monospace, background-color, rgb(240, 238, 213));
     background-color: rgb(240, 238, 213);
     font-weight: bold;
 }
@@ -67,7 +71,7 @@ page:before {
     margin-left: 2ex;
     margin-right: 120ex;
     padding-left: 2ex;
-    content: element-label() " " insert-before-button(text, "+", color, rgb(100,100,100));
+    content: element-label() "   " insert-before-button(rgb(100,100,100)) "  " insert-after-button(rgb(100,100,100));
     font-weight: bold;
     margin-top: 1ex;
 }
@@ -75,19 +79,19 @@ page:before {
 begin,
 end {
     display: block;
-    margin-left: 7ex;
+    margin-left: 11ex;
     margin-bottom: 2ex;
 }
 
 begin:before {
     display: marker;
-    content: "Since";
+    content: insert-before-button(rgb(100,100,100)) " Since";
     font-weight: bold;
 }
 
 end:before {
     display: marker;
-    content: "Until";
+    content: insert-after-button(rgb(100,100,100)) " Until";
     font-weight: bold;
 }
 
@@ -101,7 +105,7 @@ end > date {
 begin > date:first-of-type,
 end > date:first-of-type {
     display: inline;
-    content: text-field(columns, 6, background-color, rgb(250, 250, 250)) "   /   ";
+    content: text-field(columns, 6, background-color, rgb(250, 250, 250)) " " insert-after-button(text, " - ", color, rgb(100,100,100)) "  ";
     font-weight: bold;
 }
 
@@ -287,6 +291,36 @@ class|locationclass class|*:before {
   display: marker; 
   content: "   " combo-box(attribute, name, background-color, rgb(235,231,167)) " " insert-button(icon, icon(insert-after), color, rgb(100,100,100));
 }
+
+/* begin of a experimental schema classification */
+
+class|newlocationclass {
+    display: block;
+    margin-left: 17ex;
+}
+
+class|newlocationclass:before {
+    display: inline;
+    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label();
+    margin-bottom: 1ex;
+    font-weight: bold;
+    font-size: smaller;
+    color: rgb(100,100,100);
+}
+
+class|newlocationclass class|* { 
+  display: inline;
+  content: "   " element-label(font-weight, bold, color, rgb(100,100,100)) " : " combo-box(background-color, rgb(235,231,167));
+}
+
+class|newlocationclass class|*:before { 
+  display: marker; 
+  content: " " insert-button(icon, icon(insert-after), color, rgb(100,100,100));
+}
+
+
+
+/* end of experimental schema classification */
 
 cadastre,
 georeference {
@@ -668,11 +702,12 @@ description:before {
 notes:after,
 description:after {
     display: inline;
-    content: "n.b. Click on line end for more text paragraphs or inscription lines; insert links using CTRL-I";
+    content: "n.b. Click on line end for more text paragraphs or inscription lines; insert links using CTRL-T";
     font-weight: bold;
     font-size: smaller;
     color: rgb(100,100,100);
 }
+
 inscription {
     display: block;
     border: 2 groove rgb(200,200,200);
@@ -681,6 +716,11 @@ inscription {
     margin-right: 18ex;
     margin-top: 1ex;
     margin-bottom: 1ex;
+}
+
+inscription:after {
+    display: marker;
+    content:  "   " insert-after-button(text, "+", color, rgb(100,100,100));
 }
 
 para,

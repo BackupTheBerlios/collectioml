@@ -23,263 +23,285 @@ Contact the author at werner@collectio.org
 
 -->
 <grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://collectio.org/collectioML/"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:class="http://collectio.org/classes/"
-    xmlns="http://relaxng.org/ns/structure/1.0">
-    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">CollectioML: An XML RelaxNG Schema for
-        museum documentation provided by CollectioOrg. Copyright Klaus E. Werner</documentation>
-    <start>
-        <element name="object">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Defining the "object" record
-                type. other types are: "space" and "aggregation"</documentation>
-            <ref name="id"/>
-            <attribute name="xml:lang">
-                <data type="language"/>
-            </attribute>
-            <oneOrMore>
-                <element name="page">
-                    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Introducing the "page"
-                        element, which contains the main building blocks (administration, techno etc.) for a time frame</documentation>
-                    <optional>
-                        <element name="end">
-                            <ref name="date"/>
-                            <optional>
-                                <ref name="date"/>
-                            </optional>
-                        </element>
-                    </optional>
-                    <element name="begin">
-                        <ref name="date"/>
-                        <optional>
-                            <ref name="date"/>
-                        </optional>
-                    </element>
-                    <choice>
-                        <group>
-                            <interleave>
-                                <ref name="techdata"/>
-                                <optional>
-                                    <ref name="administration"/>
-                                </optional>
-                                <optional>
-                                    <ref name="event"/>
-                                </optional>
-                                <optional>
-                                    <ref name="location"/>
-                                </optional>
-                                <optional>
-                                    <ref name="iconography"/>
-                                </optional>
-                            </interleave>
-                        </group>
-                        <group>
-                            <interleave>
-                                <ref name="iconography"/>
-                                <optional>
-                                    <ref name="techdata"/>
-                                </optional>
-                                <optional>
-                                    <ref name="administration"/>
-                                </optional>
-                                <optional>
-                                    <ref name="event"/>
-                                </optional>
-                                <optional>
-                                    <ref name="location"/>
-                                </optional>
-                            </interleave>
-                        </group>
-                        <group>
-                            <interleave>
-                                <ref name="location"/>
-                                <optional>
-                                    <ref name="iconography"/>
-                                </optional>
-                                <optional>
-                                    <ref name="techdata"/>
-                                </optional>
-                                <optional>
-                                    <ref name="administration"/>
-                                </optional>
-                                <optional>
-                                    <ref name="event"/>
-                                </optional>
-                            </interleave>
-                        </group>
-                        <group>
-                            <interleave>
-                                <ref name="event"/>
-                                <optional>
-                                    <ref name="location"/>
-                                </optional>
-                                <optional>
-                                    <ref name="iconography"/>
-                                </optional>
-                                <optional>
-                                    <ref name="techdata"/>
-                                </optional>
-                                <optional>
-                                    <ref name="administration"/>
-                                </optional>
-                            </interleave>
-                        </group>
-                        <group>
-                            <interleave>
-                                <ref name="administration"/>
-                                <optional>
-                                    <ref name="event"/>
-                                </optional>
-                                <optional>
-                                    <ref name="location"/>
-                                </optional>
-                                <optional>
-                                    <ref name="iconography"/>
-                                </optional>
-                                <optional>
-                                    <ref name="techdata"/>
-                                </optional>
-                            </interleave>
-                        </group>
-                    </choice>
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:class="http://collectio.org/classes/" xmlns="http://relaxng.org/ns/structure/1.0">
+  <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">CollectioML: An XML RelaxNG Schema for museum documentation
+    provided by CollectioOrg. Copyright Klaus E. Werner</documentation>
+  <start>
+    <element name="object">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Defining the "object" record type. other types are: "space"
+        and "aggregation"</documentation>
+      <ref name="id"/>
+      <optional>
+      <ref name="head"/>
+      </optional>
+      <attribute name="xml:lang">
+        <data type="language"/>
+      </attribute>
+      <oneOrMore>
+        <element name="page">
+          <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Introducing the "page" element, which contains the
+            main building blocks (administration, techno etc.) for a time frame</documentation>
+          <choice>
+          <group>
+            <optional>
+              <element name="end">
+                <ref name="date"/>
+                <optional>
+                  <ref name="date"/>
+                </optional>
+              </element>
+            </optional>
+            <element name="begin">
+            <ref name="date"/>
+            <optional>
+              <ref name="date"/>
+            </optional>
+          </element>
+          </group>
+            <group>
+              <element name="end">
+                <ref name="date"/>
+                <optional>
+                  <ref name="date"/>
+                </optional>
+              </element>
+              <optional>
+                <element name="begin">
+                  <ref name="date"/>
+                  <optional>
+                    <ref name="date"/>
+                  </optional>
                 </element>
+              </optional>
+            </group>
+          </choice>
+          <choice>
+            <group>
+              <interleave>
+                <ref name="techdata"/>
                 <optional>
-                    <ref name="bibliography"/>
+                  <ref name="administration"/>
                 </optional>
                 <optional>
-                    <ref name="editing"/>
+                  <ref name="event"/>
                 </optional>
-            </oneOrMore>
+                <optional>
+                  <ref name="location"/>
+                </optional>
+                <optional>
+                  <ref name="iconography"/>
+                </optional>
+              </interleave>
+            </group>
+            <group>
+              <interleave>
+                <ref name="iconography"/>
+                <optional>
+                  <ref name="techdata"/>
+                </optional>
+                <optional>
+                  <ref name="administration"/>
+                </optional>
+                <optional>
+                  <ref name="event"/>
+                </optional>
+                <optional>
+                  <ref name="location"/>
+                </optional>
+              </interleave>
+            </group>
+            <group>
+              <interleave>
+                <ref name="location"/>
+                <optional>
+                  <ref name="iconography"/>
+                </optional>
+                <optional>
+                  <ref name="techdata"/>
+                </optional>
+                <optional>
+                  <ref name="administration"/>
+                </optional>
+                <optional>
+                  <ref name="event"/>
+                </optional>
+              </interleave>
+            </group>
+            <group>
+              <interleave>
+                <ref name="event"/>
+                <optional>
+                  <ref name="location"/>
+                </optional>
+                <optional>
+                  <ref name="iconography"/>
+                </optional>
+                <optional>
+                  <ref name="techdata"/>
+                </optional>
+                <optional>
+                  <ref name="administration"/>
+                </optional>
+              </interleave>
+            </group>
+            <group>
+              <interleave>
+                <ref name="administration"/>
+                <optional>
+                  <ref name="event"/>
+                </optional>
+                <optional>
+                  <ref name="location"/>
+                </optional>
+                <optional>
+                  <ref name="iconography"/>
+                </optional>
+                <optional>
+                  <ref name="techdata"/>
+                </optional>
+              </interleave>
+            </group>
+          </choice>
         </element>
-    </start>
-    <define name="administration">
-        <element name="administration">
-            <choice>
-                <group>
-                    <interleave>
-                        <ref name="owner"/>
-                        <optional>
-                            <ref name="insurance"/>
-                        </optional>
-                        <optional>
-                            <ref name="inventary"/>
-                        </optional>
-                        <optional>
-                            <ref name="jurisdiction"/>
-                        </optional>
-                        <optional>
-                            <ref name="patrimony"/>
-                        </optional>
-                        <optional>
-                            <ref name="responsibility"/>
-                        </optional>
-                    </interleave>
-                </group>
-                <group>
-                    <interleave>
-                        <ref name="responsibility"/>
-                        <optional>
-                            <ref name="insurance"/>
-                        </optional>
-                        <optional>
-                            <ref name="inventary"/>
-                        </optional>
-                        <optional>
-                            <ref name="jurisdiction"/>
-                        </optional>
-                        <optional>
-                            <ref name="patrimony"/>
-                        </optional>
-                        <optional>
-                            <ref name="owner"/>
-                        </optional>
-                    </interleave>
-                </group>
-                <group>
-                    <interleave>
-                        <ref name="insurance"/>
-                        <optional>
-                            <ref name="responsibility"/>
-                        </optional>
-                        <optional>
-                            <ref name="inventary"/>
-                        </optional>
-                        <optional>
-                            <ref name="jurisdiction"/>
-                        </optional>
-                        <optional>
-                            <ref name="patrimony"/>
-                        </optional>
-                        <optional>
-                            <ref name="owner"/>
-                        </optional>
-                    </interleave>
-                </group>
-                <group>
-                    <interleave>
-                        <ref name="inventary"/>
-                        <optional>
-                            <ref name="insurance"/>
-                        </optional>
-                        <optional>
-                            <ref name="responsibility"/>
-                        </optional>
-                        <optional>
-                            <ref name="jurisdiction"/>
-                        </optional>
-                        <optional>
-                            <ref name="patrimony"/>
-                        </optional>
-                        <optional>
-                            <ref name="owner"/>
-                        </optional>
-                    </interleave>
-                </group>
-                <group>
-                    <interleave>
-                        <ref name="jurisdiction"/>
-                        <optional>
-                            <ref name="insurance"/>
-                        </optional>
-                        <optional>
-                            <ref name="inventary"/>
-                        </optional>
-                        <optional>
-                            <ref name="responsibility"/>
-                        </optional>
-                        <optional>
-                            <ref name="patrimony"/>
-                        </optional>
-                        <optional>
-                            <ref name="owner"/>
-                        </optional>
-                    </interleave>
-                </group>
-                <group>
-                    <interleave>
-                        <ref name="patrimony"/>
-                        <optional>
-                            <ref name="insurance"/>
-                        </optional>
-                        <optional>
-                            <ref name="inventary"/>
-                        </optional>
-                        <optional>
-                            <ref name="jurisdiction"/>
-                        </optional>
-                        <optional>
-                            <ref name="responsibility"/>
-                        </optional>
-                        <optional>
-                            <ref name="owner"/>
-                        </optional>
-                    </interleave>
-                </group>
-            </choice>
-        </element>
-    </define>
-    <define name="owner">
-        <element name="owner">
-<!-- unnecessary bullshit -->
-<!-- 
+        <optional>
+          <ref name="bibliography"/>
+        </optional>
+        <optional>
+          <ref name="editing"/>
+        </optional>
+      </oneOrMore>
+    </element>
+  </start>
+  <define name="administration">
+    <element name="administration">
+      <choice>
+        <group>
+          <interleave>
+            <ref name="owner"/>
+            <optional>
+              <ref name="insurance"/>
+            </optional>
+            <optional>
+              <ref name="inventary"/>
+            </optional>
+            <optional>
+              <ref name="jurisdiction"/>
+            </optional>
+            <optional>
+              <ref name="patrimony"/>
+            </optional>
+            <optional>
+              <ref name="responsibility"/>
+            </optional>
+          </interleave>
+        </group>
+        <group>
+          <interleave>
+            <ref name="responsibility"/>
+            <optional>
+              <ref name="insurance"/>
+            </optional>
+            <optional>
+              <ref name="inventary"/>
+            </optional>
+            <optional>
+              <ref name="jurisdiction"/>
+            </optional>
+            <optional>
+              <ref name="patrimony"/>
+            </optional>
+            <optional>
+              <ref name="owner"/>
+            </optional>
+          </interleave>
+        </group>
+        <group>
+          <interleave>
+            <ref name="insurance"/>
+            <optional>
+              <ref name="responsibility"/>
+            </optional>
+            <optional>
+              <ref name="inventary"/>
+            </optional>
+            <optional>
+              <ref name="jurisdiction"/>
+            </optional>
+            <optional>
+              <ref name="patrimony"/>
+            </optional>
+            <optional>
+              <ref name="owner"/>
+            </optional>
+          </interleave>
+        </group>
+        <group>
+          <interleave>
+            <ref name="inventary"/>
+            <optional>
+              <ref name="insurance"/>
+            </optional>
+            <optional>
+              <ref name="responsibility"/>
+            </optional>
+            <optional>
+              <ref name="jurisdiction"/>
+            </optional>
+            <optional>
+              <ref name="patrimony"/>
+            </optional>
+            <optional>
+              <ref name="owner"/>
+            </optional>
+          </interleave>
+        </group>
+        <group>
+          <interleave>
+            <ref name="jurisdiction"/>
+            <optional>
+              <ref name="insurance"/>
+            </optional>
+            <optional>
+              <ref name="inventary"/>
+            </optional>
+            <optional>
+              <ref name="responsibility"/>
+            </optional>
+            <optional>
+              <ref name="patrimony"/>
+            </optional>
+            <optional>
+              <ref name="owner"/>
+            </optional>
+          </interleave>
+        </group>
+        <group>
+          <interleave>
+            <ref name="patrimony"/>
+            <optional>
+              <ref name="insurance"/>
+            </optional>
+            <optional>
+              <ref name="inventary"/>
+            </optional>
+            <optional>
+              <ref name="jurisdiction"/>
+            </optional>
+            <optional>
+              <ref name="responsibility"/>
+            </optional>
+            <optional>
+              <ref name="owner"/>
+            </optional>
+          </interleave>
+        </group>
+      </choice>
+    </element>
+  </define>
+  <define name="owner">
+    <element name="owner">
+      <!-- unnecessary bullshit -->
+      <!-- 
             <attribute name="type">
                 <choice>
                     <value type="string">public-state</value>
@@ -291,239 +313,278 @@ Contact the author at werner@collectio.org
                 </choice>
             </attribute>
 -->
-            <ref name="mcap-owner"/>
+      <data type="token"/>
+    </element>
+  </define>
+  <define name="inventary">
+    <element name="inventary">
+      <element name="name">
+        <data type="token"/>
+      </element>
+      <oneOrMore>
+        <element name="number">
+          <data type="NMTOKEN">
+            <param name="pattern">[0-9]{5}</param>
+          </data>
         </element>
-    </define>
-    <define name="inventary">
-        <element name="inventary">
-                <element name="name">
-                <ref name="mcap-inv-name"/>
-                </element>
-            <oneOrMore>
-                <element name="number">
-                    <ref name="mcap-inv-number"/>
-                </element>
-            </oneOrMore>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="responsibility">
+    <oneOrMore>
+      <element name="responsibility">
+        <attribute name="type">
+          <choice>
+            <value type="string">scientific</value>
+            <value type="string">security</value>
+          </choice>
+        </attribute>
+        <data type="string"/>
+      </element>
+    </oneOrMore>
+  </define>
+  <define name="jurisdiction">
+    <element name="jurisdiction">
+      <attribute name="type">
+        <choice>
+          <value type="string">restricted</value>
+          <value type="string">unrestricted</value>
+        </choice>
+      </attribute>
+    </element>
+  </define>
+  <define name="patrimony">
+    <element name="patrimony">
+      <ref name="value"/>
+    </element>
+  </define>
+  <define name="insurance">
+    <element name="insurance">
+      <ref name="value"/>
+    </element>
+  </define>
+  <define name="location">
+    <element name="location">
+      <choice>
+        <group>
+          <interleave>
+            <ref name="cadastre"/>
+            <optional>
+              <ref name="locationclass"/>
+            </optional>
+            <optional>
+              <ref name="georeference"/>
+            </optional>
+          </interleave>
+        </group>
+        <group>
+          <interleave>
+            <ref name="georeference"/>
+            <optional>
+              <ref name="cadastre"/>
+            </optional>
+            <optional>
+              <ref name="locationclass"/>
+            </optional>
+          </interleave>
+        </group>
+        <group>
+          <interleave>
+            <ref name="locationclass"/>
+            <optional>
+              <ref name="georeference"/>
+            </optional>
+            <optional>
+              <ref name="cadastre"/>
+            </optional>
+          </interleave>
+        </group>
+      </choice>
+    </element>
+  </define>
+  <define name="locationclass">
+    <choice>
+      <ref name="locationclass-europe"/>
+      <element name="newlocationclass" ns="http://collectio.org/classifications/">
+        <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Merely a demo for a nother cascading classification.</documentation>
+        <attribute name="schema">
+          <value type="token">Italy (Rome)</value>
+        </attribute>
+        <attribute name="coverage">
+          <value type="token">Modern times</value>
+        </attribute>
+        <element name="country">
+          <value type="string">Italy</value>
         </element>
-    </define>
-    <define name="responsibility">
-        <oneOrMore>
-            <element name="responsibility">
-                <attribute name="type">
-                    <choice>
-                        <value type="string">scientific</value>
-                        <value type="string">security</value>
-                    </choice>
-                </attribute>
-                <data type="string"/>
+        <choice>
+          <group>
+            <element name="region">
+              <value type="string">Piemonte</value>
             </element>
-        </oneOrMore>
-    </define>
-    <define name="jurisdiction">
-        <element name="jurisdiction">
-            <attribute name="type">
-                <choice>
-                    <value type="string">restricted</value>
-                    <value type="string">unrestricted</value>
-                </choice>
+          </group>
+          <group>
+            <element name="region">
+              <value type="string">Lazio</value>
+            </element>
+            <choice>
+              <element name="city">
+                <value ns="string">Roma</value>
+              </element>
+              <element name="city">
+                <value ns="string">Ostia</value>
+              </element>
+              <element name="city">
+                <value ns="string">Tivoli</value>
+              </element>
+            </choice>
+          </group>
+        </choice>
+      </element>
+    </choice>
+  </define>
+  <define name="georeference">
+    <element name="georeference">
+      <choice>
+        <element name="utm">
+          <element name="zone">
+            <data type="string"/>
+          </element>
+          <element name="easting">
+            <data type="decimal">
+              <param name="minInclusive">0000000</param>
+              <param name="maxInclusive">9999999</param>
+              <param name="pattern">[0-9]{7}</param>
+            </data>
+          </element>
+          <element name="northing">
+            <data type="decimal">
+              <param name="minInclusive">0000000</param>
+              <param name="maxInclusive">9999999</param>
+              <param name="pattern">[0-9]{7}</param>
+            </data>
+          </element>
+        </element>
+        <element name="geo">
+          <element name="latitude">
+            <attribute name="direction">
+              <choice>
+                <value>N</value>
+                <value>S</value>
+              </choice>
             </attribute>
-        </element>
-    </define>
-    <define name="patrimony">
-        <element name="patrimony">
-            <ref name="value"/>
-        </element>
-    </define>
-    <define name="insurance">
-        <element name="insurance">
-            <ref name="value"/>
-        </element>
-    </define>
-    <define name="location">
-        <element name="location">
-            <choice>
-                <group>
-                    <interleave>
-                        <ref name="cadastre"/>
-                        <optional>
-                            <ref name="locationclass"/>
-                        </optional>
-                        <optional>
-                            <ref name="georeference"/>
-                        </optional>
-                    </interleave>
-                </group>
-                <group>
-                    <interleave>
-                        <ref name="georeference"/>
-                        <optional>
-                            <ref name="cadastre"/>
-                        </optional>
-                        <optional>
-                            <ref name="locationclass"/>
-                        </optional>
-                    </interleave>
-                </group>
-                <group>
-                    <interleave>
-                        <ref name="locationclass"/>
-                        <optional>
-                            <ref name="georeference"/>
-                        </optional>
-                        <optional>
-                            <ref name="cadastre"/>
-                        </optional>
-                    </interleave>
-                </group>
-            </choice>
-        </element>
-    </define>
-    <define name="locationclass">
-        <ref name="locationclass-europe"/>
-    </define>
-    <define name="georeference">
-        <element name="georeference">
-            <choice>
-                <element name="utm">
-                    <element name="zone">
-                        <data type="string"/>
-                    </element>
-                    <element name="easting">
-                        <data type="decimal">
-                            <param name="minInclusive">0000000</param>
-                            <param name="maxInclusive">9999999</param>
-                            <param name="pattern">[0-9]{7}</param>
-                        </data>
-                    </element>
-                    <element name="northing">
-                        <data type="decimal">
-                            <param name="minInclusive">0000000</param>
-                            <param name="maxInclusive">9999999</param>
-                            <param name="pattern">[0-9]{7}</param>
-                        </data>
-                    </element>
-                </element>
-                <element name="geo">
-                    <element name="latitude">
-                        <attribute name="direction">
-                            <choice>
-                                <value>N</value>
-                                <value>S</value>
-                            </choice>
-                        </attribute>
-                        <element name="degree">
-                            <data type="integer">
-                                <param name="minInclusive">0</param>
-                                <param name="maxInclusive">180</param>
-                                <param name="pattern">[0-9]{1,3}</param>
-                            </data>
-                        </element>
-                        <element name="minute">
-                            <data type="integer">
-                                <param name="minInclusive">0</param>
-                                <param name="maxInclusive">59</param>
-                                <param name="pattern">[0-9]{1,2}</param>
-                            </data>
-                        </element>
-                        <element name="second">
-                            <data type="integer">
-                                <param name="minInclusive">0</param>
-                                <param name="maxInclusive">59</param>
-                                <param name="pattern">[0-9]{1,2}</param>
-                            </data>
-                        </element>
-                    </element>
-                    <element name="longitude">
-                        <attribute name="direction">
-                            <choice>
-                                <value>E</value>
-                                <value>W</value>
-                            </choice>
-                        </attribute>
-                        <element name="degree">
-                            <data type="integer">
-                                <param name="minInclusive">0</param>
-                                <param name="maxInclusive">180</param>
-                                <param name="pattern">[0-9]{1,3}</param>
-                            </data>
-                        </element>
-                        <element name="minute">
-                            <data type="integer">
-                                <param name="minInclusive">0</param>
-                                <param name="maxInclusive">59</param>
-                                <param name="pattern">[0-9]{1,2}</param>
-                            </data>
-                        </element>
-                        <element name="second">
-                            <data type="integer">
-                                <param name="minInclusive">0</param>
-                                <param name="maxInclusive">59</param>
-                                <param name="pattern">[0-9]{1,2}</param>
-                            </data>
-                        </element>
-                    </element>
-                </element>
-            </choice>
-            <optional>
-                <ref name="notes"/>
-            </optional>
-        </element>
-    </define>
-    <define name="iconography">
-        <element name="iconography">
-            <ref name="objectclass-numismatic"/>
-            <ref name="iconclass-persons"/>
-            <ref name="denomination"/>
-            <ref name="description"/>
-        </element>
-    </define>
-    <define name="cadastre">
-        <element name="cadastre">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">this needs some further work to
-                cover all complex cadastral schemas</documentation>
-            <ref name="denomination"/>
-            <element name="map">
-                <data type="string"/>
+            <element name="degree">
+              <data type="integer">
+                <param name="minInclusive">0</param>
+                <param name="maxInclusive">180</param>
+                <param name="pattern">[0-9]{1,3}</param>
+              </data>
             </element>
-            <element name="parcel">
-                <data type="string"/>
+            <element name="minute">
+              <data type="integer">
+                <param name="minInclusive">0</param>
+                <param name="maxInclusive">59</param>
+                <param name="pattern">[0-9]{1,2}</param>
+              </data>
             </element>
-            <optional>
-                <ref name="notes"/>
-            </optional>
+            <element name="second">
+              <data type="integer">
+                <param name="minInclusive">0</param>
+                <param name="maxInclusive">59</param>
+                <param name="pattern">[0-9]{1,2}</param>
+              </data>
+            </element>
+          </element>
+          <element name="longitude">
+            <attribute name="direction">
+              <choice>
+                <value>E</value>
+                <value>W</value>
+              </choice>
+            </attribute>
+            <element name="degree">
+              <data type="integer">
+                <param name="minInclusive">0</param>
+                <param name="maxInclusive">180</param>
+                <param name="pattern">[0-9]{1,3}</param>
+              </data>
+            </element>
+            <element name="minute">
+              <data type="integer">
+                <param name="minInclusive">0</param>
+                <param name="maxInclusive">59</param>
+                <param name="pattern">[0-9]{1,2}</param>
+              </data>
+            </element>
+            <element name="second">
+              <data type="integer">
+                <param name="minInclusive">0</param>
+                <param name="maxInclusive">59</param>
+                <param name="pattern">[0-9]{1,2}</param>
+              </data>
+            </element>
+          </element>
         </element>
-    </define>
-    <define name="editing">
-        <element name="editing">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">first and subsequent editing are
-                distinct by their relative dates only</documentation>
-            <oneOrMore>
-                <element name="editorship">
-                    <ref name="date"/>
-                    <oneOrMore>
-                        <element name="name">
-                            <attribute name="type">
-                                <choice>
-                                    <value type="token">editor</value>
-                                    <value type="token">responsible</value>
-                                </choice>
-                            </attribute>
-                            <data type="string"/>
-                        </element>
-                    </oneOrMore>
-                    <optional>
-                        <element name="description">
-                            <ref name="mixedcontents"/>
-                        </element>
-                    </optional>
-                </element>
-            </oneOrMore>
+      </choice>
+      <optional>
+        <ref name="notes"/>
+      </optional>
+    </element>
+  </define>
+  <define name="iconography">
+    <element name="iconography">
+      <ref name="objectclass-numismatic"/>
+      <ref name="iconclass-persons"/>
+      <ref name="denomination"/>
+      <ref name="description"/>
+    </element>
+  </define>
+  <define name="cadastre">
+    <element name="cadastre">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">this needs some further work to cover all complex cadastral
+        schemas</documentation>
+      <ref name="denomination"/>
+      <element name="map">
+        <data type="string"/>
+      </element>
+      <element name="parcel">
+        <data type="string"/>
+      </element>
+      <optional>
+        <ref name="notes"/>
+      </optional>
+    </element>
+  </define>
+  <define name="editing">
+    <element name="editing">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">first and subsequent editing are distinct by their relative
+        dates only</documentation>
+      <oneOrMore>
+        <element name="editorship">
+          <ref name="date"/>
+          <oneOrMore>
+            <element name="name">
+              <attribute name="type">
+                <choice>
+                  <value type="token">editor</value>
+                  <value type="token">responsible</value>
+                </choice>
+              </attribute>
+              <data type="string"/>
+            </element>
+          </oneOrMore>
+          <optional>
+            <element name="description">
+              <ref name="mixedcontents"/>
+            </element>
+          </optional>
         </element>
-    </define>
-    <define name="denomination">
-        <element name="denomination">
-<!-- the following seems really unnecessary, after all -->
-<!--
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="denomination">
+    <element name="denomination">
+      <!-- the following seems really unnecessary, after all -->
+      <!--
     <attribute name="type">
                 <choice>
                     <value type="string">common</value>
@@ -531,41 +592,41 @@ Contact the author at werner@collectio.org
                 </choice>
             </attribute>
 -->
-            <text/>
-        </element>
-    </define>
-    <define name="date">
-        <element name="date">
-            <choice>
-                <data type="gYear"/>
-                <data type="gYearMonth"/>
-                <data type="date"/>
-            </choice>
-        </element>
-    </define>
-    <define name="authorship">
+      <text/>
+    </element>
+  </define>
+  <define name="date">
+    <element name="date">
+      <choice>
+        <data type="gYear"/>
+        <data type="gYearMonth"/>
+        <data type="date"/>
+      </choice>
+    </element>
+  </define>
+  <define name="authorship">
+    <choice>
+      <ref name="authorship-culture"/>
+    </choice>
+  </define>
+  <define name="event">
+    <element name="event">
+      <attribute name="type">
         <choice>
-            <ref name="authorship-culture"/>
+          <value>acquisition</value>
+          <value>creation</value>
+          <value>finding</value>
+          <value>report</value>
+          <value>restoration</value>
+          <value>reuse</value>
         </choice>
-    </define>
-    <define name="event">
-        <element name="event">
-            <attribute name="type">
-                <choice>
-                    <value>acquisition</value>
-                    <value>creation</value>
-                    <value>finding</value>
-                    <value>report</value>
-                    <value>restoration</value>
-                    <value>reuse</value>
-                </choice>
-            </attribute>
-            <zeroOrMore>
-                <ref name="authorship"/>
-            </zeroOrMore>
-            <ref name="description"/>
-            <!-- only needed for REALLY complex arrangements ... -->
-            <!--
+      </attribute>
+      <zeroOrMore>
+        <ref name="authorship"/>
+      </zeroOrMore>
+      <ref name="description"/>
+      <!-- only needed for REALLY complex arrangements ... -->
+      <!--
             <optional>
             <oneOrMore>
             <element name="dataset">
@@ -580,16 +641,16 @@ Contact the author at werner@collectio.org
             </oneOrMore>
             </optional>
             -->
-        </element>
-    </define>
-    <define name="techdata">
-        <element name="techdata">
-            <choice>
-                <ref name="tech-data"/>
-            </choice>
-            <ref name="tech-text"/>
-            <!-- again, only needed for REALLY complex arrangements ... -->
-            <!--
+    </element>
+  </define>
+  <define name="techdata">
+    <element name="techdata">
+      <choice>
+        <ref name="tech-data"/>
+      </choice>
+      <ref name="tech-text"/>
+      <!-- again, only needed for REALLY complex arrangements ... -->
+      <!--
             <zeroOrMore>
             <element name="dataset">
             <attribute name="set">
@@ -602,184 +663,184 @@ Contact the author at werner@collectio.org
             </element>
             </zeroOrMore>
             -->
-        </element>
-    </define>
-    <define name="tech-text">
-        <element name="observation">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Eventually, put here a
-                classification system in the way of: outstanding - very good - good - average - damaged - bad</documentation>
-            <attribute name="type">
-                <choice>
-                    <value>conservation</value>
-                </choice>
-            </attribute>
-            <ref name="description"/>
-        </element>
-        <optional>
-            <element name="observation">
-                <attribute name="type">
-                    <choice>
-                        <value>execution</value>
-                    </choice>
-                </attribute>
-                <ref name="description"/>
-            </element>
-        </optional>
-    </define>
-    <define name="tech-data">
-        <oneOrMore>
-            <ref name="materialclasses-basic"/>
-        </oneOrMore>
-        <zeroOrMore>
-            <ref name="techniqueclasses-basic"/>
-        </zeroOrMore>
-        <oneOrMore>
-            <element name="part">
-                <attribute name="name">
-                    <data type="string"/>
-                </attribute>
-                <choice>
-                    <group>
-                        <interleave>
-                            <ref name="depth"/>
-                            <optional>
-                                <ref name="diameter"/>
-                            </optional>
-                            <optional>
-                                <ref name="height"/>
-                            </optional>
-                            <optional>
-                                <ref name="length"/>
-                            </optional>
-                            <optional>
-                                <ref name="weight"/>
-                            </optional>
-                            <optional>
-                                <ref name="width"/>
-                            </optional>
-                        </interleave>
-                        <optional>
-                            <ref name="notes"/>
-                        </optional>
-                    </group>
-                    <group>
-                        <interleave>
-                            <ref name="width"/>
-                            <optional>
-                                <ref name="depth"/>
-                            </optional>
-                            <optional>
-                                <ref name="diameter"/>
-                            </optional>
-                            <optional>
-                                <ref name="height"/>
-                            </optional>
-                            <optional>
-                                <ref name="length"/>
-                            </optional>
-                            <optional>
-                                <ref name="weight"/>
-                            </optional>
-                        </interleave>
-                        <optional>
-                            <ref name="notes"/>
-                        </optional>
-                    </group>
-                    <group>
-                        <interleave>
-                            <ref name="weight"/>
-                            <optional>
-                                <ref name="width"/>
-                            </optional>
-                            <optional>
-                                <ref name="depth"/>
-                            </optional>
-                            <optional>
-                                <ref name="diameter"/>
-                            </optional>
-                            <optional>
-                                <ref name="height"/>
-                            </optional>
-                            <optional>
-                                <ref name="length"/>
-                            </optional>
-                        </interleave>
-                        <optional>
-                            <ref name="notes"/>
-                        </optional>
-                    </group>
-                    <group>
-                        <interleave>
-                            <ref name="length"/>
-                            <optional>
-                                <ref name="weight"/>
-                            </optional>
-                            <optional>
-                                <ref name="width"/>
-                            </optional>
-                            <optional>
-                                <ref name="depth"/>
-                            </optional>
-                            <optional>
-                                <ref name="diameter"/>
-                            </optional>
-                            <optional>
-                                <ref name="height"/>
-                            </optional>
-                        </interleave>
-                        <optional>
-                            <ref name="notes"/>
-                        </optional>
-                    </group>
-                    <group>
-                        <interleave>
-                            <ref name="height"/>
-                            <optional>
-                                <ref name="length"/>
-                            </optional>
-                            <optional>
-                                <ref name="weight"/>
-                            </optional>
-                            <optional>
-                                <ref name="width"/>
-                            </optional>
-                            <optional>
-                                <ref name="depth"/>
-                            </optional>
-                            <optional>
-                                <ref name="diameter"/>
-                            </optional>
-                        </interleave>
-                        <optional>
-                            <ref name="notes"/>
-                        </optional>
-                    </group>
-                    <group>
-                        <interleave>
-                            <ref name="diameter"/>
-                            <optional>
-                                <ref name="height"/>
-                            </optional>
-                            <optional>
-                                <ref name="length"/>
-                            </optional>
-                            <optional>
-                                <ref name="weight"/>
-                            </optional>
-                            <optional>
-                                <ref name="width"/>
-                            </optional>
-                            <optional>
-                                <ref name="depth"/>
-                            </optional>
-                        </interleave>
-                        <optional>
-                            <ref name="notes"/>
-                        </optional>
-                    </group>
-                </choice>
-                <!-- easy, but not correct (lack of at-least-one): -->
-                <!-- 
+    </element>
+  </define>
+  <define name="tech-text">
+    <element name="observation">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Eventually, put here a classification system in the way
+        of: outstanding - very good - good - average - damaged - bad</documentation>
+      <attribute name="type">
+        <choice>
+          <value>conservation</value>
+        </choice>
+      </attribute>
+      <ref name="description"/>
+    </element>
+    <optional>
+      <element name="observation">
+        <attribute name="type">
+          <choice>
+            <value>execution</value>
+          </choice>
+        </attribute>
+        <ref name="description"/>
+      </element>
+    </optional>
+  </define>
+  <define name="tech-data">
+    <oneOrMore>
+      <ref name="materialclasses-basic"/>
+    </oneOrMore>
+    <zeroOrMore>
+      <ref name="techniqueclasses-basic"/>
+    </zeroOrMore>
+    <oneOrMore>
+      <element name="part">
+        <attribute name="name">
+          <data type="string"/>
+        </attribute>
+        <choice>
+          <group>
+            <interleave>
+              <ref name="depth"/>
+              <optional>
+                <ref name="diameter"/>
+              </optional>
+              <optional>
+                <ref name="height"/>
+              </optional>
+              <optional>
+                <ref name="length"/>
+              </optional>
+              <optional>
+                <ref name="weight"/>
+              </optional>
+              <optional>
+                <ref name="width"/>
+              </optional>
+            </interleave>
+            <optional>
+              <ref name="notes"/>
+            </optional>
+          </group>
+          <group>
+            <interleave>
+              <ref name="width"/>
+              <optional>
+                <ref name="depth"/>
+              </optional>
+              <optional>
+                <ref name="diameter"/>
+              </optional>
+              <optional>
+                <ref name="height"/>
+              </optional>
+              <optional>
+                <ref name="length"/>
+              </optional>
+              <optional>
+                <ref name="weight"/>
+              </optional>
+            </interleave>
+            <optional>
+              <ref name="notes"/>
+            </optional>
+          </group>
+          <group>
+            <interleave>
+              <ref name="weight"/>
+              <optional>
+                <ref name="width"/>
+              </optional>
+              <optional>
+                <ref name="depth"/>
+              </optional>
+              <optional>
+                <ref name="diameter"/>
+              </optional>
+              <optional>
+                <ref name="height"/>
+              </optional>
+              <optional>
+                <ref name="length"/>
+              </optional>
+            </interleave>
+            <optional>
+              <ref name="notes"/>
+            </optional>
+          </group>
+          <group>
+            <interleave>
+              <ref name="length"/>
+              <optional>
+                <ref name="weight"/>
+              </optional>
+              <optional>
+                <ref name="width"/>
+              </optional>
+              <optional>
+                <ref name="depth"/>
+              </optional>
+              <optional>
+                <ref name="diameter"/>
+              </optional>
+              <optional>
+                <ref name="height"/>
+              </optional>
+            </interleave>
+            <optional>
+              <ref name="notes"/>
+            </optional>
+          </group>
+          <group>
+            <interleave>
+              <ref name="height"/>
+              <optional>
+                <ref name="length"/>
+              </optional>
+              <optional>
+                <ref name="weight"/>
+              </optional>
+              <optional>
+                <ref name="width"/>
+              </optional>
+              <optional>
+                <ref name="depth"/>
+              </optional>
+              <optional>
+                <ref name="diameter"/>
+              </optional>
+            </interleave>
+            <optional>
+              <ref name="notes"/>
+            </optional>
+          </group>
+          <group>
+            <interleave>
+              <ref name="diameter"/>
+              <optional>
+                <ref name="height"/>
+              </optional>
+              <optional>
+                <ref name="length"/>
+              </optional>
+              <optional>
+                <ref name="weight"/>
+              </optional>
+              <optional>
+                <ref name="width"/>
+              </optional>
+              <optional>
+                <ref name="depth"/>
+              </optional>
+            </interleave>
+            <optional>
+              <ref name="notes"/>
+            </optional>
+          </group>
+        </choice>
+        <!-- easy, but not correct (lack of at-least-one): -->
+        <!-- 
                 <interleave>
                 <optional>
                 <ref name="height"/>
@@ -801,165 +862,170 @@ Contact the author at werner@collectio.org
                 </optional>
                 </interleave> 
                 -->
-            </element>
-        </oneOrMore>
-    </define>
-    <define name="height">
-        <element name="height">
-            <ref name="metric-units"/>
-        </element>
-    </define>
-    <define name="width">
-        <element name="width">
-            <ref name="metric-units"/>
-        </element>
-    </define>
-    <define name="length">
-        <element name="length">
-            <ref name="metric-units"/>
-        </element>
-    </define>
-    <define name="depth">
-        <element name="depth">
-            <ref name="metric-units"/>
-        </element>
-    </define>
-    <define name="diameter">
-        <element name="diameter">
-            <ref name="metric-units"/>
-        </element>
-    </define>
-    <define name="weight">
-        <element name="weight">
-            <ref name="weight-units"/>
-        </element>
-    </define>
-    <define name="metric-units">
-        <attribute name="unit">
+      </element>
+    </oneOrMore>
+  </define>
+  <define name="height">
+    <element name="height">
+      <ref name="metric-units"/>
+    </element>
+  </define>
+  <define name="width">
+    <element name="width">
+      <ref name="metric-units"/>
+    </element>
+  </define>
+  <define name="length">
+    <element name="length">
+      <ref name="metric-units"/>
+    </element>
+  </define>
+  <define name="depth">
+    <element name="depth">
+      <ref name="metric-units"/>
+    </element>
+  </define>
+  <define name="diameter">
+    <element name="diameter">
+      <ref name="metric-units"/>
+    </element>
+  </define>
+  <define name="weight">
+    <element name="weight">
+      <ref name="weight-units"/>
+    </element>
+  </define>
+  <define name="metric-units">
+    <attribute name="unit">
+      <choice>
+        <value type="string">meter</value>
+        <value type="string">centimeter</value>
+        <value type="string">millimeter</value>
+        <value type="string">palmo romano</value>
+        <value type="string">braccio</value>
+        <value type="string">dito</value>
+      </choice>
+    </attribute>
+    <data type="decimal"/>
+  </define>
+  <define name="weight-units">
+    <attribute name="unit">
+      <choice>
+        <value type="string">kilogramm</value>
+        <value type="string">gramm</value>
+        <value type="string">milligramm</value>
+      </choice>
+    </attribute>
+    <data type="decimal"/>
+  </define>
+  <define name="bibliography">
+    <element name="bibliography">
+      <oneOrMore>
+        <element name="entry">
+          <attribute name="type">
             <choice>
-                <value type="string">meter</value>
-                <value type="string">centimeter</value>
-                <value type="string">millimeter</value>
-                <value type="string">palmo romano</value>
-                <value type="string">braccio</value>
-                <value type="string">dito</value>
+              <value>monograph</value>
+              <value>series</value>
+              <value>periodical</value>
             </choice>
-        </attribute>
-        <data type="decimal"/>
-    </define>
-    <define name="weight-units">
-        <attribute name="unit">
-            <choice>
-                <value type="string">kilogramm</value>
-                <value type="string">gramm</value>
-                <value type="string">milligramm</value>
-            </choice>
-        </attribute>
-        <data type="decimal"/>
-    </define>
-    <define name="bibliography">
-        <element name="bibliography">
-            <oneOrMore>
-                <element name="entry">
-                    <attribute name="type">
-                        <choice>
-                            <value>monograph</value>
-                            <value>series</value>
-                            <value>periodical</value>
-                        </choice>
-                    </attribute>
-                    <data type="string"/>
-                </element>
-            </oneOrMore>
+          </attribute>
+          <data type="string"/>
         </element>
-    </define>
-    <define name="notes">
-        <element name="notes">
-            <ref name="mixedcontents"/>
-        </element>
-    </define>
-    <define name="value">
-        <element name="value">
-            <attribute name="currency">
-                <choice>
-                    <value type="string">EUR</value>
-                    <value type="string">LIT</value>
-                </choice>
-            </attribute>
-            <data type="integer"/>
-        </element>
-    </define>
-    <define name="description">
-        <element name="description">
-            <ref name="mixedcontents"/>
-        </element>
-    </define>
-    <define name="mixedcontents">
-        <oneOrMore>
-            <choice>
-                <element name="para">
-                    <interleave>
-                        <text/>
-                        <optional>
-                            <ref name="link"/>
-                        </optional>
-                    </interleave>
-                </element>
-                <ref name="inscription"/>
-            </choice>
-        </oneOrMore>
-    </define>
-    <define name="link">
-        <element name="link">
-            <ref name="href"/>
-            <attribute name="rel">
-                <choice>
-                    <value>part-of</value>
-                    <value>copy-of</value>
-                    <value>copied-by</value>
-                    <value>model-for</value>
-                    <value>based-on</value>
-                    <value>reproduction-of</value>
-                    <value>reproduced-by</value>
-                    <value>reproduction-of</value>
-                    <value>formally-related-to</value>
-                    <value>technically-related-to</value>
-                    <value>iconographically-related-to</value>
-                    <value>related-to</value>
-                </choice>
-            </attribute>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="notes">
+    <element name="notes">
+      <ref name="mixedcontents"/>
+    </element>
+  </define>
+  <define name="value">
+    <element name="value">
+      <attribute name="currency">
+        <choice>
+          <value type="string">EUR</value>
+          <value type="string">LIT</value>
+        </choice>
+      </attribute>
+      <data type="integer"/>
+    </element>
+  </define>
+  <define name="description">
+    <element name="description">
+      <ref name="mixedcontents"/>
+    </element>
+  </define>
+  <define name="mixedcontents">
+    <oneOrMore>
+      <choice>
+        <element name="para">
+          <interleave>
             <text/>
+            <optional>
+              <ref name="link"/>
+            </optional>
+          </interleave>
         </element>
-    </define>
-    <define name="inscription">
-        <element name="inscription">
-            <attribute name="transcription">
-                <value>basic</value>
-            </attribute>
-            <oneOrMore>
-                <element name="line">
-                    <text/>
-                </element>
-            </oneOrMore>
+        <ref name="inscription"/>
+      </choice>
+    </oneOrMore>
+  </define>
+  <define name="link">
+    <element name="link">
+      <ref name="href"/>
+      <attribute name="rel">
+        <choice>
+          <value>part-of</value>
+          <value>copy-of</value>
+          <value>copied-by</value>
+          <value>model-for</value>
+          <value>based-on</value>
+          <value>reproduction-of</value>
+          <value>reproduced-by</value>
+          <value>reproduction-of</value>
+          <value>formally-related-to</value>
+          <value>technically-related-to</value>
+          <value>iconographically-related-to</value>
+          <value>related-to</value>
+        </choice>
+      </attribute>
+      <text/>
+    </element>
+  </define>
+  <define name="inscription">
+    <element name="inscription">
+      <attribute name="transcription">
+        <value>basic</value>
+      </attribute>
+      <oneOrMore>
+        <element name="line">
+          <text/>
         </element>
-    </define>
-    <define name="href">
-        <attribute name="xlink:href">
-            <ref name="mcap-id"/>
-        </attribute>
-    </define>
-    <define name="id">
-        <attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
-            <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> binding the "object" record to a
-                unique id</documentation>
-            <ref name="mcap-id"/>
-        </attribute>
-    </define>
-    <include href="l12n/locationclass/geopoliticalV01.rng"/>
-    <include href="l12n/authorship/cultureV01.rng"/>
-    <include href="l12n/techdata/materialsV01.rng"/>
-    <include href="l12n/techdata/techniquesV01.rng"/>
-    <include href="l12n/iconclass/ic_personsV01.rng"/>
-    <include href="l12n/iconclass/oc_numismaticV01.rng"/>
-    <include href="l12n/owner/0001.rng"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="href">
+    <attribute name="xlink:href">
+      <ref name="general-id"/>
+    </attribute>
+  </define>
+  <define name="id">
+    <attribute name="id" ns="http://www.w3.org/XML/1998/namespace">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">binding the "object" record to a unique id</documentation>
+      <ref name="general-id"/>
+    </attribute>
+  </define>
+  <define name="head">
+    <attribute name="head" ns="http://www.w3.org/XML/1998/namespace">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">binding the "object" record to a header id</documentation>
+      <ref name="general-id"/>
+    </attribute>
+  </define>
+  <include href="l12n/locationclass/geopoliticalV01.rng"/>
+  <include href="l12n/authorship/cultureV01.rng"/>
+  <include href="l12n/techdata/materialsV01.rng"/>
+  <include href="l12n/techdata/techniquesV01.rng"/>
+  <include href="l12n/iconclass/ic_personsV01.rng"/>
+  <include href="l12n/iconclass/oc_numismaticV01.rng"/>
+  <include href="l12n/owner/ids.rng"/>
 </grammar>
