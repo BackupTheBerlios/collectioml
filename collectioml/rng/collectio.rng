@@ -32,7 +32,7 @@ Contact the author at werner@collectio.org
         and "aggregation"</documentation>
       <ref name="id"/>
       <optional>
-      <ref name="head"/>
+        <ref name="head"/>
       </optional>
       <attribute name="xml:lang">
         <data type="language"/>
@@ -41,7 +41,8 @@ Contact the author at werner@collectio.org
         <element name="page">
           <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Introducing the "page" element, which contains the
             main building blocks (administration, techno etc.) for a time frame</documentation>
-          <choice>
+          <!-- the following is not really ever needed ... -->
+          <!--          <choice>
           <group>
             <optional>
               <element name="end">
@@ -75,6 +76,21 @@ Contact the author at werner@collectio.org
               </optional>
             </group>
           </choice>
+-->
+          <optional>
+            <element name="end">
+              <ref name="date"/>
+              <optional>
+                <ref name="date"/>
+              </optional>
+            </element>
+          </optional>
+          <element name="begin">
+            <ref name="date"/>
+            <optional>
+              <ref name="date"/>
+            </optional>
+          </element>
           <choice>
             <group>
               <interleave>
@@ -304,12 +320,12 @@ Contact the author at werner@collectio.org
       <!-- 
             <attribute name="type">
                 <choice>
-                    <value type="string">public-state</value>
-                    <value type="string">public-province</value>
-                    <value type="string">public-region</value>
-                    <value type="string">public-city</value>
-                    <value type="string">private-entity</value>
-                    <value type="string">private-person</value>
+                    <value>public-state</value>
+                    <value>public-province</value>
+                    <value>public-region</value>
+                    <value>public-city</value>
+                    <value>private-entity</value>
+                    <value>private-person</value>
                 </choice>
             </attribute>
 -->
@@ -335,8 +351,8 @@ Contact the author at werner@collectio.org
       <element name="responsibility">
         <attribute name="type">
           <choice>
-            <value type="string">scientific</value>
-            <value type="string">security</value>
+            <value>scientific</value>
+            <value>security</value>
           </choice>
         </attribute>
         <data type="string"/>
@@ -347,8 +363,8 @@ Contact the author at werner@collectio.org
     <element name="jurisdiction">
       <attribute name="type">
         <choice>
-          <value type="string">restricted</value>
-          <value type="string">unrestricted</value>
+          <value>restricted</value>
+          <value>unrestricted</value>
         </choice>
       </attribute>
     </element>
@@ -403,44 +419,7 @@ Contact the author at werner@collectio.org
     </element>
   </define>
   <define name="locationclass">
-    <choice>
-      <ref name="locationclass-europe"/>
-      <element name="newlocationclass" ns="http://collectio.org/classifications/">
-        <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Merely a demo for a nother cascading classification.</documentation>
-        <attribute name="schema">
-          <value type="token">Italy (Rome)</value>
-        </attribute>
-        <attribute name="coverage">
-          <value type="token">Modern times</value>
-        </attribute>
-        <element name="country">
-          <value type="string">Italy</value>
-        </element>
-        <choice>
-          <group>
-            <element name="region">
-              <value type="string">Piemonte</value>
-            </element>
-          </group>
-          <group>
-            <element name="region">
-              <value type="string">Lazio</value>
-            </element>
-            <choice>
-              <element name="city">
-                <value ns="string">Roma</value>
-              </element>
-              <element name="city">
-                <value ns="string">Ostia</value>
-              </element>
-              <element name="city">
-                <value ns="string">Tivoli</value>
-              </element>
-            </choice>
-          </group>
-        </choice>
-      </element>
-    </choice>
+    <ref name="locationclass-italy"/>
   </define>
   <define name="georeference">
     <element name="georeference">
@@ -532,7 +511,13 @@ Contact the author at werner@collectio.org
   </define>
   <define name="iconography">
     <element name="iconography">
-      <ref name="objectclass-numismatic"/>
+<!--
+      <choice>
+        <ref name="objectclass-numismatic"/>
+        <ref name="objectclass-scripts"/>
+      </choice>
+-->
+      <ref name="objectclass-scripts"/>
       <ref name="iconclass-persons"/>
       <ref name="denomination"/>
       <ref name="description"/>
@@ -565,8 +550,8 @@ Contact the author at werner@collectio.org
             <element name="name">
               <attribute name="type">
                 <choice>
-                  <value type="token">editor</value>
-                  <value type="token">responsible</value>
+                  <value>editor</value>
+                  <value>responsible</value>
                 </choice>
               </attribute>
               <data type="string"/>
@@ -587,8 +572,8 @@ Contact the author at werner@collectio.org
       <!--
     <attribute name="type">
                 <choice>
-                    <value type="string">common</value>
-                    <value type="string">official</value>
+                    <value>common</value>
+                    <value>official</value>
                 </choice>
             </attribute>
 -->
@@ -645,10 +630,10 @@ Contact the author at werner@collectio.org
   </define>
   <define name="techdata">
     <element name="techdata">
-      <choice>
-        <ref name="tech-data"/>
-      </choice>
-      <ref name="tech-text"/>
+      <ref name="tech-data"/>
+      <optional>
+        <ref name="tech-text"/>
+      </optional>
       <!-- again, only needed for REALLY complex arrangements ... -->
       <!--
             <zeroOrMore>
@@ -656,43 +641,26 @@ Contact the author at werner@collectio.org
             <attribute name="set">
             <data type="token"/>
             </attribute>
-            <choice>
             <ref name="tech-data"/>
-            </choice>
+            <optional>
             <ref name="tech-text"/>
+            </optional>
             </element>
             </zeroOrMore>
             -->
     </element>
   </define>
   <define name="tech-text">
-    <element name="observation">
-      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Eventually, put here a classification system in the way
-        of: outstanding - very good - good - average - damaged - bad</documentation>
-      <attribute name="type">
-        <choice>
-          <value>conservation</value>
-        </choice>
-      </attribute>
-      <ref name="description"/>
-    </element>
-    <optional>
-      <element name="observation">
-        <attribute name="type">
-          <choice>
-            <value>execution</value>
-          </choice>
-        </attribute>
-        <ref name="description"/>
-      </element>
-    </optional>
+    <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> Eventually, put here an additional classification system in
+      the way of: outstanding - very good - good - average - damaged - bad</documentation>
+    <ref name="description"/>
   </define>
   <define name="tech-data">
     <oneOrMore>
-      <ref name="materialclasses-basic"/>
+      <ref name="materialclass-paper"/>
     </oneOrMore>
     <zeroOrMore>
-      <ref name="techniqueclasses-basic"/>
+      <ref name="techniqueclass-prints"/>
     </zeroOrMore>
     <oneOrMore>
       <element name="part">
@@ -898,12 +866,12 @@ Contact the author at werner@collectio.org
   <define name="metric-units">
     <attribute name="unit">
       <choice>
-        <value type="string">meter</value>
-        <value type="string">centimeter</value>
-        <value type="string">millimeter</value>
-        <value type="string">palmo romano</value>
-        <value type="string">braccio</value>
-        <value type="string">dito</value>
+        <value>meter</value>
+        <value>centimeter</value>
+        <value>millimeter</value>
+        <value>palmo romano</value>
+        <value>braccio</value>
+        <value>dito</value>
       </choice>
     </attribute>
     <data type="decimal"/>
@@ -911,9 +879,9 @@ Contact the author at werner@collectio.org
   <define name="weight-units">
     <attribute name="unit">
       <choice>
-        <value type="string">kilogramm</value>
-        <value type="string">gramm</value>
-        <value type="string">milligramm</value>
+        <value>kilogramm</value>
+        <value>gramm</value>
+        <value>milligramm</value>
       </choice>
     </attribute>
     <data type="decimal"/>
@@ -943,8 +911,8 @@ Contact the author at werner@collectio.org
     <element name="value">
       <attribute name="currency">
         <choice>
-          <value type="string">EUR</value>
-          <value type="string">LIT</value>
+          <value>EUR</value>
+          <value>LIT</value>
         </choice>
       </attribute>
       <data type="integer"/>
@@ -961,9 +929,9 @@ Contact the author at werner@collectio.org
         <element name="para">
           <interleave>
             <text/>
-            <optional>
+            <zeroOrMore>
               <ref name="link"/>
-            </optional>
+            </zeroOrMore>
           </interleave>
         </element>
         <ref name="inscription"/>
@@ -1021,11 +989,12 @@ Contact the author at werner@collectio.org
       <ref name="general-id"/>
     </attribute>
   </define>
-  <include href="l12n/locationclass/geopoliticalV01.rng"/>
-  <include href="l12n/authorship/cultureV01.rng"/>
-  <include href="l12n/techdata/materialsV01.rng"/>
-  <include href="l12n/techdata/techniquesV01.rng"/>
-  <include href="l12n/iconclass/ic_personsV01.rng"/>
-  <include href="l12n/iconclass/oc_numismaticV01.rng"/>
+  <include href="l12n/locationclass/lc_italyV02.rng"/>
+  <include href="l12n/authorship/au_cultureV02.rng"/>
+  <include href="l12n/techdata/mc_writingsupportV02.rng"/>
+  <include href="l12n/techdata/tc_printV02.rng"/>
+  <include href="l12n/iconclass/ic_personsV02.rng"/>
+  <include href="l12n/iconclass/oc_scriptsV02.rng"/>
+  <include href="l12n/iconclass/oc_numismaticV02.rng"/>
   <include href="l12n/owner/ids.rng"/>
 </grammar>

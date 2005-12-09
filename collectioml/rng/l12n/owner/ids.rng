@@ -39,4 +39,14 @@
             <param name="pattern">urn:collectio:0002:lib:[0-9]{5}</param>
         </data>
     </define>
+  <define name="marib-id">
+    <data type="NMTOKEN">
+      <param name="pattern">urn:collectio:0003:scu:[0-9]{5}</param>
+    </data>
+  </define>
+  <define name="esterh-id">
+    <data type="NMTOKEN">
+      <param name="pattern">urn:collectio:0004:scu:[0-9]{5}</param>
+    </data>
+  </define>
 </grammar>

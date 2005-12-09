@@ -199,20 +199,13 @@
         </notes>
       </part>
 
-      <observation type="conservation">
         <description>
           <para>Lo stato di conservazione è generalmente buono.</para>
-        </description>
-      </observation>
-
-      <observation type="execution">
-        <description>
           <para>L'esecuzione tecnica presenta le stesse caratteristiche come
           <link rel="technically-related-to"
           xlink:href="urn:collectio:0001:scu:01216">l'altra cassa</link> della
           collezione.</para>
         </description>
-      </observation>
     </techdata>
   </page>
 
@@ -339,11 +332,9 @@
         <width unit="palmo romano">3</width>
       </part>
 
-      <observation type="conservation">
         <description>
           <para>Conservazione buona.</para>
         </description>
-      </observation>
     </techdata>
 
     <location>

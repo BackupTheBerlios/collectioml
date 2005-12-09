@@ -3,97 +3,89 @@
 <?xml-stylesheet type="text/css" href="rscs/collectio-xxe.css" ?>
 <?xxe-relaxng-schema name="-//collectioOrg//collectioML V0.1//EN" location="bhertz.rng" encoding="UTF-8" ?>
 <?oxygen RNGSchema="bhertz.rng" type="xml"?>
-<object xml:id="urn:collectio:0002:lib:01210" xml:lang="it-IT"
-        xmlns="http://collectio.org/collectioML/"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns:ns="http://collectio.org/collectioML/"
-        xmlns:class="http://collectio.org/classifications/">
+<object xml:id="urn:collectio:0002:lib:01210" xml:lang="it-IT" xmlns="http://collectio.org/collectioML/"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ns="http://collectio.org/collectioML/"
+  xmlns:class="http://collectio.org/classifications/">
   <page>
     <begin>
       <date>1923</date>
     </begin>
-
     <administration>
       <owner>Bibliotheca Hertziana</owner>
+      <inventary>
+        <name>Neuer Bibliothekskatalog</name>
+        <number>01210</number>
+      </inventary>
     </administration>
   </page>
-
   <page>
     <begin>
       <date>1638</date>
     </begin>
-
     <iconography>
-      <class:objectclass coverage="roman late republic and imperial"
-                         schema="numismatic">
-        <class:material name="silver"></class:material>
+      <class:objectclass coverage="all times">
+        <class:group>script materials</class:group>
+        <class:type>print</class:type>
+        <class:form>book</class:form>
       </class:objectclass>
-
-      <class:iconclass coverage="roman antiquity"
-                       schema="private and public persons">
-        <class:sex name="male"></class:sex>
+      <class:iconclass coverage="roman empire, classical times">
+        <class:group>person</class:group>
+        <class:sex>male</class:sex>
+        <class:type>public</class:type>
+        <class:function>emperor</class:function>
       </class:iconclass>
-
-      <denomination>Segmenta nobilium signorum et statuarum, quae temporis
-      dentem invidium evasere urbis aeternae ruinis erepta typis aeneis ab ce
-      comissa perpetuae venerationis monumentum [richtig: Icones et segmenta
-      nobilium signorum et statuarum quae temporis dentem invidium evascere
-      Urbis Aeternae ruinis erepta typis aeneis ab eo commissa perpetuae
-      venerationis monumentum Romae extant... delineata atque in aere incisa
-      per Franciscum Perrier]</denomination>
-
+      <denomination>Segmenta nobilium signorum et statuarum, quae temporis dentem invidium evasere urbis aeternae ruinis erepta typis aeneis
+        ab ce comissa perpetuae venerationis monumentum [richtig: Icones et segmenta nobilium signorum et statuarum quae temporis dentem
+        invidium evascere Urbis Aeternae ruinis erepta typis aeneis ab eo commissa perpetuae venerationis monumentum Romae extant...
+        delineata atque in aere incisa per Franciscum Perrier]</denomination>
       <description>
         <para>Bekanntes Sammelwerk Perriers.</para>
       </description>
     </iconography>
-
     <techdata>
-      <class:materialclass coverage="all times" schema="materials">
-        <class:material name="metal"></class:material>
+      <class:materialclass coverage="all times">
+        <class:material>writing support</class:material>
+        <class:type>cellulose paper</class:type>
       </class:materialclass>
-
+      <class:techniqueclass coverage="modern times">
+        <class:technique>print</class:technique>
+        <class:method>engraving</class:method>
+      </class:techniqueclass>
       <part name="Volume">
         <height unit="centimeter">32.2</height>
-
         <width unit="centimeter">18.3</width>
-
         <!-- pages? binding? other techdata? -->
       </part>
-
       <part name="Tavole">
         <height unit="centimeter">23.1</height>
-
         <width unit="centimeter">12.5</width>
       </part>
-
-      <observation type="conservation">
-        <description>
-          <para>Buona conservazione con solo leggere macchie.</para>
-        </description>
-      </observation>
-    </techdata>
-
-    <event type="creation">
-      <class:authorclass coverage="mediterranean area, classical roman and greek times"
-                         schema="cultural" type="execution">
-        <class:culture name="roman"></class:culture>
-      </class:authorclass>
-
       <description>
-        <para>François Perrier figura come autore del testo che delle
-        tavole.</para>
+        <para>Buona conservazione con solo leggere macchie.</para>
+      </description>
+    </techdata>
+    <location>
+      <class:locationclass coverage="italy, modern times">
+        <class:country>Italy</class:country>
+        <class:region>Lazio</class:region>
+        <class:city>Roma</class:city>
+      </class:locationclass>
+    </location>
+    <event type="creation">
+      <class:authorclass coverage="mediterranean area, classical roman and greek times" type="execution">
+        <class:culture>roman</class:culture>
+      </class:authorclass>
+      <description>
+        <para>François Perrier figura come autore sia del testo che delle tavole.</para>
       </description>
     </event>
   </page>
-
   <bibliography>
     <entry type="monograph">Stuart Jones, Mus.Cons. 1926, S. 3.</entry>
   </bibliography>
-
   <editing>
     <editorship>
       <date>2005-12-20</date>
-
       <name type="editor">Brigitte Kuhn</name>
     </editorship>
   </editing>

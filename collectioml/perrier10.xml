@@ -3,101 +3,61 @@
 <?xml-stylesheet type="text/css" href="rscs/collectio-xxe.css" ?>
 <?xxe-relaxng-schema name="-//collectioOrg//collectioML V0.1//EN" location="bhertz.rng" encoding="UTF-8" ?>
 <?oxygen RNGSchema="bhertz.rng" type="xml"?>
-<object xml:head="urn:collectio:0002:lib:01210"
-        xml:id="urn:collectio:0002:lib:01215" xml:lang="it-IT"
-        xmlns="http://collectio.org/collectioML/"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns:ns="http://collectio.org/collectioML/"
-        xmlns:class="http://collectio.org/classifications/">
-  <page>
-    <begin>
-      <date>1923</date>
-    </begin>
-
-    <administration>
-      <owner>Bibliotheca Hertziana</owner>
-    </administration>
-  </page>
-
+<object xml:head="urn:collectio:0002:lib:01210" xml:id="urn:collectio:0002:lib:01215" xml:lang="it-IT"
+  xmlns="http://collectio.org/collectioML/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ns="http://collectio.org/collectioML/"
+  xmlns:class="http://collectio.org/classifications/">
   <page>
     <begin>
       <date>1638</date>
     </begin>
-
+    <iconography>
+        <class:objectclass coverage="all times">
+          <class:group>script materials</class:group>
+          <class:type>print</class:type>
+          <class:form>page</class:form>
+          <class:expression>image</class:expression>
+        </class:objectclass>
+        <class:iconclass coverage="roman empire, classical times">
+          <class:group>person</class:group>
+            <class:sex>male</class:sex>
+            <class:type>public</class:type>
+            <class:function>magistrate</class:function>
+        </class:iconclass>
+        <denomination>Ammiraglio romano</denomination>
+        <description>
+            <para>Im Index als "Ammiraglio romano" bezeichnet. Unten links auf dem Blatt findet sich die
+                Angabe:</para>
+            <inscription transcription="basic">
+                <line>FB 10</line>
+            </inscription>
+            <para>Die Vorlage ist die in den Musei Capitolini aufbewahrte
+                <link rel="reproduction-of" xlink:href="urn:collectio:0001:scu:00123">Skulptur des
+                    Augustus</link> (sog. römischer Admiral).</para>
+        </description>
+    </iconography>
     <techdata>
-      <class:materialclass coverage="all times" schema="materials">
-        <class:material name="metal"></class:material>
+      <class:materialclass coverage="all times">
+        <class:material>writing support</class:material>
+        <class:type>cellulose paper</class:type>
       </class:materialclass>
-
       <part name="Tafel 10: Blatt">
         <height unit="centimeter">32.2</height>
-
         <width unit="centimeter">18.3</width>
       </part>
-
       <part name="Tafel 10: Bild">
         <height unit="centimeter">23.1</height>
-
         <width unit="centimeter">12.5</width>
       </part>
-
-      <observation type="conservation">
-        <description>
-          <para>[Warum hier eine FESTE AUSWAHL "conservazione"?] Buona conservazione.</para>
-        </description>
-      </observation>
     </techdata>
-
-    <iconography>
-      <class:objectclass coverage="roman late republic and imperial"
-                         schema="numismatic">
-        <class:material name="silver"></class:material>
-      </class:objectclass>
-
-      <class:iconclass coverage="roman antiquity"
-                       schema="private and public persons">
-        <class:sex name="male"><class:type name="public"/></class:sex>
-      </class:iconclass>
-
-      <denomination>(Tafel 10) Ammiraglio romano</denomination>
-
-      <description>
-        <para>Im Index als "Ammiraglio romano" bezeichnet. Unten links auf dem
-        Blatt findet sich die Angabe:</para>
-
-        <inscription transcription="basic">
-          <line>FB 10</line>
-        </inscription>
-      </description>
-    </iconography>
   </page>
-
-  <page>
-    <end>
-      <date>1638</date>
-    </end>
-
-    <begin>
-      <date>1635</date>
-    </begin>
-
-    <event type="creation">
-      <class:authorclass coverage="mediterranean area, classical roman and greek times"
-                         schema="cultural" type="execution">
-        <class:culture name="roman"></class:culture>
-      </class:authorclass>
-
-      <description>
-        <para>Die Vorlage ist die in den Musei Capitolini aufbewahrte <link
-        rel="reproduction-of"
-        xlink:href="urn:collectio:0001:scu:00123">Skulptur des Augustus</link>
-        (sog. römischer Admiral).</para>
-      </description>
-    </event>
-  </page>
-
   <bibliography>
     <entry type="monograph">Stuart Jones, Mus.Cons. 1926, S. 3 zu Nr. 2; Monumenta Rariora. (Stuart Jones gibt „Perrier Taf. 16“ an,
       entweder irrtümlich oder sich auf eine spätere Edition beziehend)</entry>
   </bibliography>
+  <editing>
+    <editorship>
+      <date>2005-12-20</date>
+      <name type="editor">Brigitte Kuhn</name>
+    </editorship>
+  </editing>
 </object>

@@ -85,13 +85,13 @@ end {
 
 begin:before {
     display: marker;
-    content: insert-before-button(rgb(100,100,100)) " Since";
+    content: insert-before-button(text, "+", color, rgb(100,100,100)) " Since";
     font-weight: bold;
 }
 
 end:before {
     display: marker;
-    content: insert-after-button(rgb(100,100,100)) " Until";
+    content: "Until";
     font-weight: bold;
 }
 
@@ -105,7 +105,7 @@ end > date {
 begin > date:first-of-type,
 end > date:first-of-type {
     display: inline;
-    content: text-field(columns, 6, background-color, rgb(250, 250, 250)) " " insert-after-button(text, " - ", color, rgb(100,100,100)) "  ";
+    content: text-field(columns, 6, background-color, rgb(250, 250, 250)) " " insert-after-button(text, " / ", color, rgb(100,100,100)) "  ";
     font-weight: bold;
 }
 
@@ -120,7 +120,18 @@ editing {
     margin-bottom: 2ex;
 }
 
-bibliography:before,
+bibliography:before {
+    display: block;
+    border: 2px groove rgb(200, 200, 200);
+    background-color: rgb(188, 188, 170);
+    margin-left: 2ex;
+    margin-right: 120ex;
+    padding-left: 2ex;
+    content: element-label() "   " insert-before-button(rgb(100,100,100)) "  " insert-after-button(rgb(100,100,100));
+    font-weight: bold;
+    margin-top: 1ex;
+}
+
 editing:before {
     display: block;
     border: 2px groove rgb(200, 200, 200);
@@ -128,7 +139,7 @@ editing:before {
     margin-left: 2ex;
     margin-right: 120ex;
     padding-left: 2ex;
-    content: element-label() "  " insert-before-button(text, "+", color, rgb(100,100,100));
+    content: element-label() "   " insert-before-button(rgb(100,100,100));
     font-weight: bold;
     margin-top: 1ex;
 }
@@ -188,7 +199,8 @@ event:before {
 owner {
     display: block;
     margin-left: 34ex;
-    content: combo-box(font-size, smaller);
+    margin-right: 1ex;
+    content: combo-box();
     background-color: rgb(235, 231, 167);
 }
 
@@ -269,58 +281,61 @@ value:after {
 /*             location elements               */
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 
-class|locationclass {
+class|techniqueclass,
+class|materialclass,
+class|objectclass,
+class|locationclass,
+class|iconclass,
+class|authorclass {
     display: block;
     margin-left: 17ex;
+    margin-bottom: 1ex;
 }
 
-class|locationclass:before {
+class|techniqueclass:before,
+class|materialclass:before,
+class|objectclass:before,
+class|locationclass:before,
+class|iconclass:before {
     display: inline;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label();
-    margin-bottom: 1ex;
+    content: insert-after-button(text, "+") " " element-label();
     font-weight: bold;
     font-size: smaller;
     color: rgb(100,100,100);
 }
 
-class|locationclass class|* { 
-  display: inline;
-}
-
-class|locationclass class|*:before { 
-  display: marker; 
-  content: "   " combo-box(attribute, name, background-color, rgb(235,231,167)) " " insert-button(icon, icon(insert-after), color, rgb(100,100,100));
-}
-
-/* begin of a experimental schema classification */
-
-class|newlocationclass {
-    display: block;
-    margin-left: 17ex;
-}
-
-class|newlocationclass:before {
+class|authorclass:before {
     display: inline;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label();
-    margin-bottom: 1ex;
+    content: insert-after-button(text, "+") " " element-label() " " combo-box(attribute, type, background-color, rgb(235,231,167));
     font-weight: bold;
     font-size: smaller;
     color: rgb(100,100,100);
 }
 
-class|newlocationclass class|* { 
-  display: inline;
-  content: "   " element-label(font-weight, bold, color, rgb(100,100,100)) " : " combo-box(background-color, rgb(235,231,167));
+class|techniqueclass class|*,
+class|materialclass class|*,
+class|objectclass class|*,
+class|locationclass class|*,
+class|iconclass class|*,
+class|authorclass class|* { 
+  display: block;
+  margin-left: 18ex;
+  margin-top: 0.5ex;
+  content: combo-box(background-color, rgb(235,231,167));
 }
 
-class|newlocationclass class|*:before { 
-  display: marker; 
-  content: " " insert-button(icon, icon(insert-after), color, rgb(100,100,100));
+class|techniqueclass class|*:before,
+class|materialclass class|*:before,
+class|objectclass class|*:before,
+class|locationclass class|*:before,
+class|iconclass class|*:before,
+class|authorclass class|*:before { 
+  display: marker;
+  content: insert-after-button(text, "+") " " element-label() " :  ";
+    font-weight: bold;
+    font-size: smaller;
+    color: rgb(100,100,100);
 }
-
-
-
-/* end of experimental schema classification */
 
 cadastre,
 georeference {
@@ -442,38 +457,6 @@ second:after {
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 
 
-class|objectclass {
-    display: block;
-    margin-left: 20ex;
-}
-
-class|iconclass {
-    display: block;
-    margin-left: 22ex;
-}
-
-class|objectclass:before,
-class|iconclass:before {
-    display: inline;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
-    margin-left: 6ex;
-    margin-bottom: 1ex;
-    font-weight: bold;
-    font-size: smaller;
-    color: rgb(100,100,100);
-}
-
-class|objectclass class|*,
-class|iconclass class|* { 
-  display: inline;
-}
-
-class|objectclass class|*:before,
-class|iconclass class|*:before { 
-  display: marker; 
-  content: "   " combo-box(attribute, name, background-color, rgb(235,231,167)) " " insert-button(icon, icon(insert-after), color, rgb(100,100,100));
-}
-
 denomination {
     display: block;
     margin-left: 34ex;
@@ -491,39 +474,6 @@ denomination:before {
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 /*             techdata elements               */
 /* +++++++++++++++++++++++++++++++++++++++++++ */
-
-class|techniqueclass {
-    display: block;
-    margin-left: 16ex;
-}
-
-class|materialclass {
-    display: block;
-    margin-left: 18ex;
-}
-
-class|techniqueclass:before,
-class|materialclass:before {
-    display: inline;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " : ";
-    margin-left: 6ex;
-    margin-bottom: 1ex;
-    font-weight: bold;
-    font-size: smaller;
-    color: rgb(100,100,100);
-
-}
-
-class|techniqueclass class|*,
-class|materialclass class|* { 
-  display: inline;
-}
-
-class|techniqueclass class|*:before,
-class|materialclass class|*:before { 
-  display: marker; 
-  content: "   " combo-box(attribute, name, background-color, rgb(235,231,167)) " " insert-button(icon, icon(insert-after), color, rgb(100,100,100));
-}
 
 part {
     display: block;
@@ -579,34 +529,6 @@ observation:before {
     font-size: smaller;
     color: rgb(100,100,100);
 }
-
-/* +++++++++++++++++++++++++++++++++++++++++++ */
-/*               event elements                */
-/* +++++++++++++++++++++++++++++++++++++++++++ */
-
-class|authorclass {
-    display: block;
-    margin-left: 4ex;
-}
-
-class|authorclass:before {
-    display: inline;
-    content: insert-after-button(text, "+", color, rgb(100,100,100)) " " element-label() " " combo-box(attribute, type, background-color, rgb(235,231,167)) " : ";
-    margin-bottom: 1ex;
-    font-weight: bold;
-    font-size: smaller;
-    color: rgb(100,100,100);
-}
-
-class|authorclass class|* { 
-  display: inline;
-}
-
-class|authorclass class|*:before { 
-  display: marker; 
-  content: "   " combo-box(attribute, name, background-color, rgb(235,231,167)) " " insert-button(icon, icon(insert-after), color, rgb(100,100,100));
-}
-
 
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 /*          bibliography elements              */
@@ -753,7 +675,12 @@ link {
     text-decoration: underline;
 }
 
+link:before {
+    display: inline;
+    content: combo-box(attribute, rel, background-color, rgb(235, 231, 167)) " ";
+}
+
 link:after {
     display: inline;
-    content: " " text-field(attribute, xlink|href, columns, 16) " Type: " combo-box(attribute, rel, font-size, smaller, background-color, rgb(235, 231, 167));
+    content: " " text-field(attribute, xlink|href, columns, 16);
 }
