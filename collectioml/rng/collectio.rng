@@ -355,7 +355,7 @@ Contact the author at werner@collectio.org
             <value>security</value>
           </choice>
         </attribute>
-        <data type="string"/>
+        <data type="token"/>
       </element>
     </oneOrMore>
   </define>
@@ -426,7 +426,7 @@ Contact the author at werner@collectio.org
       <choice>
         <element name="utm">
           <element name="zone">
-            <data type="string"/>
+            <data type="token"/>
           </element>
           <element name="easting">
             <data type="decimal">
@@ -511,14 +511,19 @@ Contact the author at werner@collectio.org
   </define>
   <define name="iconography">
     <element name="iconography">
-<!--
+      <!--
       <choice>
         <ref name="objectclass-numismatic"/>
         <ref name="objectclass-scripts"/>
       </choice>
 -->
       <ref name="objectclass-scripts"/>
-      <ref name="iconclass-persons"/>
+      <optional>
+        <ref name="iconclass-persons"/>
+      </optional>
+      <optional>
+        <ref name="iconclass-plastik"/>
+      </optional>
       <ref name="denomination"/>
       <ref name="description"/>
     </element>
@@ -529,10 +534,10 @@ Contact the author at werner@collectio.org
         schemas</documentation>
       <ref name="denomination"/>
       <element name="map">
-        <data type="string"/>
+        <data type="token"/>
       </element>
       <element name="parcel">
-        <data type="string"/>
+        <data type="token"/>
       </element>
       <optional>
         <ref name="notes"/>
@@ -548,13 +553,7 @@ Contact the author at werner@collectio.org
           <ref name="date"/>
           <oneOrMore>
             <element name="name">
-              <attribute name="type">
-                <choice>
-                  <value>editor</value>
-                  <value>responsible</value>
-                </choice>
-              </attribute>
-              <data type="string"/>
+              <data type="token"/>
             </element>
           </oneOrMore>
           <optional>
@@ -564,7 +563,31 @@ Contact the author at werner@collectio.org
           </optional>
         </element>
       </oneOrMore>
+      <ref name="legacy"/>
     </element>
+  </define>
+  <define name="legacy">
+    <optional>
+      <element name="data" ns="http://collectio.org/collectioML/legacy/">
+        <ref name="legacydata"/>
+      </element>
+    </optional>
+  </define>
+  <define name="legacydata">
+    <oneOrMore>
+      <choice>
+        <element>
+          <anyName/>
+          <ref name="legacydata"/>
+        </element>
+        <optional>
+          <attribute>
+            <anyName/>
+          </attribute>
+        </optional>
+        <text/>
+      </choice>
+    </oneOrMore>
   </define>
   <define name="denomination">
     <element name="denomination">
@@ -589,11 +612,6 @@ Contact the author at werner@collectio.org
       </choice>
     </element>
   </define>
-  <define name="authorship">
-    <choice>
-      <ref name="authorship-culture"/>
-    </choice>
-  </define>
   <define name="event">
     <element name="event">
       <attribute name="type">
@@ -607,7 +625,10 @@ Contact the author at werner@collectio.org
         </choice>
       </attribute>
       <zeroOrMore>
-        <ref name="authorship"/>
+        <choice>
+          <ref name="authorship-culture"/>
+          <ref name="authorship-names"/>
+        </choice>
       </zeroOrMore>
       <ref name="description"/>
       <!-- only needed for REALLY complex arrangements ... -->
@@ -665,7 +686,7 @@ Contact the author at werner@collectio.org
     <oneOrMore>
       <element name="part">
         <attribute name="name">
-          <data type="string"/>
+          <data type="token"/>
         </attribute>
         <choice>
           <group>
@@ -897,7 +918,7 @@ Contact the author at werner@collectio.org
               <value>periodical</value>
             </choice>
           </attribute>
-          <data type="string"/>
+          <data type="token"/>
         </element>
       </oneOrMore>
     </element>
@@ -991,9 +1012,11 @@ Contact the author at werner@collectio.org
   </define>
   <include href="l12n/locationclass/lc_italyV02.rng"/>
   <include href="l12n/authorship/au_cultureV02.rng"/>
+  <include href="l12n/authorship/au_namesV02.rng"/>
   <include href="l12n/techdata/mc_writingsupportV02.rng"/>
   <include href="l12n/techdata/tc_printV02.rng"/>
   <include href="l12n/iconclass/ic_personsV02.rng"/>
+  <include href="l12n/iconclass/ic_plastikV02.rng"/>
   <include href="l12n/iconclass/oc_scriptsV02.rng"/>
   <include href="l12n/iconclass/oc_numismaticV02.rng"/>
   <include href="l12n/owner/ids.rng"/>

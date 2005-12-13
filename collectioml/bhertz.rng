@@ -23,7 +23,7 @@ Contact the author at werner@collectio.org
 
 -->
 <grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://collectio.org/collectioML/"
-  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:class="http://collectio.org/classes/" xmlns="http://relaxng.org/ns/structure/1.0">
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:class="http://collectio.org/classes/" xmlns:legacy="http://collectio.org/collectioML/legacy/" xmlns="http://relaxng.org/ns/structure/1.0">
   <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">CollectioML: An XML RelaxNG Schema Customization for
     Bibliotheca Hertziana.</documentation>
   <include href="rng/collectio.rng">
@@ -62,6 +62,38 @@ Contact the author at werner@collectio.org
         <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"> binding the "object" record to a unique id</documentation>
         <ref name="bhertz-id"/>
       </attribute>
+    </define>
+    <define name="legacy">
+        <element name="legacy:data">
+          <ref name="legacydata"/>
+        </element>
+    </define>
+    
+    <define name="legacydata">
+      <element name="legacy:stecher">
+        <text/>
+      </element>
+      <element name="legacy:künstler">
+        <text/>
+      </element>
+      <element name="legacy:funktionDesDruckes">
+        <text/>
+      </element>
+      <element name="legacy:weitereEditionen">
+        <text/>
+      </element>
+      <element name="legacy:präzisePosition">
+        <text/>
+      </element>
+      <element name="legacy:generelleIkonographie">
+        <text/>
+      </element>
+      <element name="legacy:iconclass">
+        <text/>
+      </element>
+      <element name="legacy:detaillierteIkonographie">
+        <text/>
+      </element>
     </define>
   </include>
 </grammar>

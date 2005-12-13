@@ -9,6 +9,7 @@
 @namespace url("http://collectio.org/collectioML/");
 @namespace xlink url("http://www.w3.org/1999/xlink"); 
 @namespace class url("http://collectio.org/classifications/");
+@namespace legacy url("http://collectio.org/collectioML/legacy/");
 
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 /*                root element                 */
@@ -31,7 +32,7 @@ object:before {
     content:  element-label()
               " Record ID :   "
               text-field(attribute, xml|id, columns, 28, font-family, monospace, background-color, rgb(240, 238, 213))
-              "   Record Header :   "
+              "   Header Record ID :   "
               text-field(attribute, xml|head, columns, 28, font-family, monospace, background-color, rgb(240, 238, 213));
     background-color: rgb(240, 238, 213);
     font-weight: bold;
@@ -324,6 +325,22 @@ class|authorclass class|* {
   content: combo-box(background-color, rgb(235,231,167));
 }
 
+
+class|authorclass class|name:after {
+    display: inline;
+    content: " " replace-button(text, "[List/Manual]");
+    font-weight: bold;
+    font-size: smaller;
+    color: rgb(100,100,100);
+}
+
+class|authorclass class|name[choice=manual] { 
+  display: block;
+  margin-left: 18ex;
+  margin-top: 0.5ex;
+  content: text-field(columns, 20, background-color, rgb(235,231,167));
+}
+
 class|techniqueclass class|*:before,
 class|materialclass class|*:before,
 class|objectclass class|*:before,
@@ -567,11 +584,9 @@ editorship:before {
     color: rgb(100,100,100);
 }
 
-
 editorship > date {
     display: block;
     margin-left: 34ex;
-    margin-bottom: 1ex;
     padding-left: 2;
     padding-right: 2;
 }
@@ -594,12 +609,45 @@ editorship > name {
 
 editorship > name:before {
     display: marker;
-    content: element-label() " of " combo-box(attribute, type, background-color, rgb(235, 231, 167)) " " insert-after-button(text, "+") " : ";
+    content: insert-after-button(text, "+") " " element-label() " : ";
     font-weight: bold;
     font-size: smaller;
     color: rgb(100,100,100);
 }
 
+/* legacy elements */
+
+legacy|data {
+    display: block;
+    border: 2px groove rgb(200, 200, 200);
+    background-color: rgb(240, 238, 213);
+}
+
+legacy|data:before {
+    display: block;
+    padding-left: 9ex;
+    margin-right: 120ex;
+    border: 2px groove rgb(200, 200, 200);
+    background-color: rgb(240, 238, 213);
+    content: "Legacy Data : ";
+    font-weight: bold;
+    font-size: smaller;
+    color: rgb(100,100,100);
+}
+
+
+legacy|data legacy|* {
+    display: block;
+    margin-left: 30ex;
+}
+
+legacy|data legacy|*:before {
+    display: marker;
+    content: element-label() " : ";
+    font-weight: bold;
+    font-size: smaller;
+    color: rgb(100,100,100);
+}
 
 /* +++++++++++++++++++++++++++++++++++++++++++ */
 /*             shared elements                 */

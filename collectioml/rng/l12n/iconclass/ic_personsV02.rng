@@ -28,7 +28,7 @@
     <element name="iconclass" ns="http://collectio.org/classifications/">
       <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Merely a demo for a cascading classification.</documentation>
       <attribute name="coverage">
-        <value type="token">roman empire, classical times</value>
+        <value type="token">persons, roman empire, classical times</value>
       </attribute>
       <element name="group">
         <value>person</value>
