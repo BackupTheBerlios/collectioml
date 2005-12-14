@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+CollectioML Markup Language for Museum Collections
+
+Copyright (C) 2004-2005 Klaus E. Werner
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Contact the author at werner@collectio.org
+
+-->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0"
+  ns="http://collectio.org/classifications/">
+  <define name="authorship-names">
+    <element name="authorclass">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">The following is an experimental relaxng schema for
+        author names.</documentation>
+      <attribute name="coverage">
+        <value>all times</value>
+      </attribute>
+      <attribute name="type">
+        <choice>
+          <value>general</value>
+          <value>invention</value>
+          <value>execution</value>
+          <value>commission</value>
+        </choice>
+      </attribute>
+      <choice>
+      <element name="name">
+        <attribute name="choice">
+         <value>list</value>
+        </attribute>
+        <choice>
+          <value>Antonio Lafrery</value>
+          <value>Bernard de Montfaucon</value>
+          <value>François Perrier</value>
+          <value>Fulvio Orsini</value>
+          <value>Giovanni Battista De Cavalieri</value>
+          <value>Girolamo Franzini</value>
+          <value>Jean-Jacques Boissard </value>
+          <value>Joachim Von Sandrart</value>
+          <value>Miche-Ange de La Chausse</value>
+          <value>Paolo Alessandro Maffei</value>
+        </choice>
+      </element>
+      <element name="name">
+        <attribute name="choice">
+          <value>manual</value>
+        </attribute>
+        <data type="token"/>
+      </element>
+      </choice>
+    </element>
+  </define>
+</grammar>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  
+  CollectioML Markup Language for Museum Collections
+  
+  Copyright (C) 2004-2005 Klaus E. Werner
+  
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+  
+  Contact the author at werner@collectio.org
+  
+-->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0"
+  ns="http://collectio.org/classifications/">
+  <define name="iconclass-plastik">
+    <element name="iconclass" ns="http://collectio.org/classifications/">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Merely a demo for a cascading classification.</documentation>
+      <attribute name="coverage">
+        <value type="token">plastik, general, all times</value>
+      </attribute>
+      <element name="group">
+        <value>plastik</value>
+      </element>
+      <optional>
+        <element name="type">
+          <choice>
+            <value>statuen</value>
+            <value>reliefs</value>
+          </choice>
+        </element>
+      </optional>
+      <optional>
+        <element name="subtype">
+          <choice>
+            <value>sitzend</value>
+            <value>stehend</value>
+            <value>hochrelief</value>
+            <value>flachrelief</value>
+          </choice>
+        </element>
+      </optional>
+    </element>
+  </define>
+</grammar>
