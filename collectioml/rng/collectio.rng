@@ -1010,14 +1010,14 @@ Contact the author at werner@collectio.org
       <ref name="general-id"/>
     </attribute>
   </define>
-  <include href="l12n/locationclass/lc_italyV02.rng"/>
-  <include href="l12n/authorship/au_cultureV02.rng"/>
-  <include href="l12n/authorship/au_namesV02.rng"/>
-  <include href="l12n/techdata/mc_writingsupportV02.rng"/>
-  <include href="l12n/techdata/tc_printV02.rng"/>
-  <include href="l12n/iconclass/ic_personsV02.rng"/>
-  <include href="l12n/iconclass/ic_plastikV02.rng"/>
-  <include href="l12n/iconclass/oc_scriptsV02.rng"/>
-  <include href="l12n/iconclass/oc_numismaticV02.rng"/>
-  <include href="l12n/owner/ids.rng"/>
+  <include href="class/lc_italyV02.rng"/>
+  <include href="class/au_cultureV02.rng"/>
+  <include href="class/au_namesV02.rng"/>
+  <include href="class/mc_writingsupportV02.rng"/>
+  <include href="class/tc_printV02.rng"/>
+  <include href="class/ic_personsV02.rng"/>
+  <include href="class/ic_plastikV02.rng"/>
+  <include href="class/oc_scriptsV02.rng"/>
+  <include href="class/oc_numismaticV02.rng"/>
+  <include href="ids/ids.rng"/>
 </grammar>

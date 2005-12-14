@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+CollectioML Markup Language for Museum Collections
+
+Copyright (C) 2004-2005 Klaus E. Werner
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Contact the author at werner@collectio.org
+
+-->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0"
+  ns="http://collectio.org/classifications/">
+  <define name="authorship-culture">
+    <element name="authorclass">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">The following is an experimental relaxng schema for
+        cultural classifications.</documentation>
+      <attribute name="type">
+        <choice>
+          <value>general</value>
+          <value>invention</value>
+          <value>execution</value>
+          <value>commission</value>
+        </choice>
+      </attribute>
+      <attribute name="coverage">
+        <value>mediterranean area, classical roman and greek times</value>
+      </attribute>
+      <element name="culture">
+        <choice>
+          <value>etruscan</value>
+          <value>roman</value>
+          <value>greek</value>
+        </choice>
+      </element>
+      <optional>
+        <element name="culturalsphere">
+          <choice>
+            <value>archaic</value>
+            <value>classical</value>
+            <value>hellenistic</value>
+            <value>italic</value>
+            <value>urban</value>
+            <value>provincial</value>
+            <value>late-antique</value>
+            <value>byzantine</value>
+          </choice>
+        </element>
+      </optional>
+    </element>
+  </define>
+</grammar>

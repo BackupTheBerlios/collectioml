@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+CollectioML Markup Language for Museum Collections
+
+Copyright (C) 2004-2005 Klaus E. Werner
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Contact the author at werner@collectio.org
+
+-->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0"
+  ns="http://collectio.org/classifications/">
+  <define name="locationclass-europe">
+    <element name="locationclass">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Cascading location classification schema for
+        europe/italy/rome (thanks, Hussein!). The cities of "Lazio" are not complete, nor the street names of the different "Rioni".</documentation>
+      <attribute name="schema">
+        <value type="token">Italy (Rome)</value>
+      </attribute>
+      <attribute name="coverage">
+        <value type="token">Modern times</value>
+      </attribute>
+      <element name="country">
+        <attribute name="name">
+          <value type="token">Italy</value>
+        </attribute>
+        <choice>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Piemonte</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Valle d'Aosta</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Lombardia</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Trentino Alto Adige</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Veneto</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Friuli Venezia Giulia</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Liguria</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Emilia Romagna</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Toscana</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Umbria</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Marche</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Lazio</value>
+            </attribute>
+            <choice>
+              <element name="city">
+                <attribute name="name">
+                  <value type="token">Anzio</value>
+                </attribute>
+              </element>
+              <element name="city">
+                <attribute name="name">
+                  <value type="token">Latina</value>
+                </attribute>
+                <element name="city">
+                  <attribute name="name">
+                    <value type="token">Nettuno</value>
+                  </attribute>
+                </element>
+              </element>
+              <element name="city">
+                <attribute name="name">
+                  <value type="token">Ostia</value>
+                </attribute>
+              </element>
+              <element name="city">
+                <attribute name="name">
+                  <value type="token">Rieti</value>
+                </attribute>
+              </element>
+              <element name="city">
+                <attribute name="name">
+                  <value type="token">Roma</value>
+                </attribute>
+                <optional>
+                  <choice>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio I</value>
+                      </attribute>
+                      <choice>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione I Monti</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via dei Fori Imperiali</value>
+                                  <value type="token">via Cavour</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione II Trevi</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Merulana</value>
+                                  <value type="token">via Bordeaux</value>
+                                  <value type="token">via Tuscolana</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione III Colonna</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione IV Campo Marzio</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione V Ponte</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione VI Parione</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione VII Regola</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione VIII s.Eustachio</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione IX Pigna</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione X Campitelli</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XI s.Angelo</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XII Ripa</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XIII Trastevere</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XIV Borgo</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XV Esquilino</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XVI Ludovisi</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XVII Sallustiano</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XVIII Castro Pretorio</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XIX Celio</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XX Testaccio</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XXI s.Saba</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                        <element name="rione">
+                          <attribute name="name">
+                            <value type="token">Rione XXII Prati</value>
+                          </attribute>
+                          <optional>
+                            <element name="via">
+                              <attribute name="name">
+                                <choice>
+                                  <value type="token">via Goethe</value>
+                                  <value type="token">via Mancini</value>
+                                </choice>
+                              </attribute>
+                            </element>
+                          </optional>
+                        </element>
+                      </choice>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio II</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio III</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio IV</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio V</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio VI</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio VII</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio VIII</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio IX</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio X</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio XI</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio XII</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio XIII</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio XIV</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio XV</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio XVI</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio XVII</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio XVIII</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio XIX</value>
+                      </attribute>
+                    </element>
+                    <element name="municipio">
+                      <attribute name="name">
+                        <value type="token">Municipio XX</value>
+                      </attribute>
+                    </element>
+                  </choice>
+                </optional>
+              </element>
+              <element name="city">
+                <attribute name="name">
+                  <value type="token">Viterbo</value>
+                </attribute>
+              </element>
+            </choice>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Abruzzo</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Molise</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Campania</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Puglia</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Basilicata</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Calabria</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Sicilia</value>
+            </attribute>
+          </element>
+          <element name="region">
+            <attribute name="name">
+              <value type="token">Sardegna</value>
+            </attribute>
+          </element>
+        </choice>
+      </element>
+    </element>
+  </define>
+</grammar>
