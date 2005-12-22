@@ -32,7 +32,8 @@ Contact the author at werner@collectio.org
         and "aggregation"</documentation>
       <ref name="id"/>
       <optional>
-        <ref name="head"/>
+        <ref name="id-part"/>
+        <ref name="id-head"/>
       </optional>
       <attribute name="xml:lang">
         <data type="language"/>
@@ -913,9 +914,9 @@ Contact the author at werner@collectio.org
         <element name="entry">
           <attribute name="type">
             <choice>
-              <value>monograph</value>
-              <value>series</value>
-              <value>periodical</value>
+              <value>print resource</value>
+              <value>archival resource</value>
+              <value>web resource</value>
             </choice>
           </attribute>
           <data type="token"/>
@@ -1004,10 +1005,17 @@ Contact the author at werner@collectio.org
       <ref name="general-id"/>
     </attribute>
   </define>
-  <define name="head">
+  <define name="id-head">
     <attribute name="head" ns="http://www.w3.org/XML/1998/namespace">
       <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">binding the "object" record to a header id</documentation>
       <ref name="general-id"/>
+    </attribute>
+  </define>
+  <define name="id-part">
+    <attribute name="part" ns="http://www.w3.org/XML/1998/namespace">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">defining the resource in relation to the header record (for
+        example, "fragment 1", "base", or other short name which identifies the piece)</documentation>
+      <data type="token"/>
     </attribute>
   </define>
   <include href="class/lc_italyV02.rng"/>

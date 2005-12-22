@@ -53,6 +53,7 @@
           <choice>
             <value>text</value>
             <value>image</value>
+            <value>mixed</value>
           </choice>
         </element>
       </optional>

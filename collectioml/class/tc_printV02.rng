@@ -38,9 +38,19 @@ Contact the author at werner@collectio.org
         <element name="method">
           <choice>
             <value>aquatint</value>
+            <value>chromolithography</value>
             <value>engraving</value>
             <value>etching</value>
-            <value>watercolour</value>
+            <value>half-tone</value>
+            <value>letterpress</value>
+            <value>linocut</value>
+            <value>lithography</value>
+            <value>mezzotint</value>
+            <value>offset</value>
+            <value>photolithography</value>
+            <value>silk screen printing</value>
+            <value>xerocopy</value>
+            <value>xylography</value>
           </choice>
         </element>
       </optional>
