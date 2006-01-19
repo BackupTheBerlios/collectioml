@@ -32,8 +32,7 @@ Contact the author at werner@collectio.org
         and "aggregation"</documentation>
       <ref name="id"/>
       <optional>
-        <ref name="id-part"/>
-        <ref name="id-head"/>
+        <ref name="parent-id"/>
       </optional>
       <attribute name="xml:lang">
         <data type="language"/>
@@ -420,7 +419,9 @@ Contact the author at werner@collectio.org
     </element>
   </define>
   <define name="locationclass">
-    <ref name="locationclass-italy"/>
+    <element name="locationclass" ns="http://collectio.org/classifications/">
+      <ref name="genericdata"/>
+    </element>
   </define>
   <define name="georeference">
     <element name="georeference">
@@ -512,22 +513,23 @@ Contact the author at werner@collectio.org
   </define>
   <define name="iconography">
     <element name="iconography">
-      <!--
-      <choice>
-        <ref name="objectclass-numismatic"/>
-        <ref name="objectclass-scripts"/>
-      </choice>
--->
-      <ref name="objectclass-scripts"/>
-      <optional>
-        <ref name="iconclass-persons"/>
-      </optional>
-      <optional>
-        <ref name="iconclass-plastik"/>
-      </optional>
+      <ref name="objectclass"/>
+      <ref name="iconclass"/>
       <ref name="denomination"/>
       <ref name="description"/>
     </element>
+  </define>
+  <define name="objectclass">
+    <element name="objectclass" ns="http://collectio.org/classifications/">
+      <ref name="genericdata"/>
+    </element>
+  </define>
+  <define name="iconclass">
+    <zeroOrMore>
+      <element name="iconclass" ns="http://collectio.org/classifications/">
+        <ref name="genericdata"/>
+      </element>
+    </zeroOrMore>
   </define>
   <define name="cadastre">
     <element name="cadastre">
@@ -570,16 +572,16 @@ Contact the author at werner@collectio.org
   <define name="legacy">
     <optional>
       <element name="data" ns="http://collectio.org/collectioML/legacy/">
-        <ref name="legacydata"/>
+        <ref name="genericdata"/>
       </element>
     </optional>
   </define>
-  <define name="legacydata">
+  <define name="genericdata">
     <oneOrMore>
       <choice>
         <element>
           <anyName/>
-          <ref name="legacydata"/>
+          <ref name="genericdata"/>
         </element>
         <optional>
           <attribute>
@@ -625,12 +627,7 @@ Contact the author at werner@collectio.org
           <value>reuse</value>
         </choice>
       </attribute>
-      <zeroOrMore>
-        <choice>
-          <ref name="authorship-culture"/>
-          <ref name="authorship-names"/>
-        </choice>
-      </zeroOrMore>
+      <ref name="authorclass"/>
       <ref name="description"/>
       <!-- only needed for REALLY complex arrangements ... -->
       <!--
@@ -649,6 +646,13 @@ Contact the author at werner@collectio.org
             </optional>
             -->
     </element>
+  </define>
+  <define name="authorclass">
+    <zeroOrMore>
+      <element name="authorclass" ns="http://collectio.org/classifications/">
+        <ref name="genericdata"/>
+      </element>
+    </zeroOrMore>
   </define>
   <define name="techdata">
     <element name="techdata">
@@ -677,15 +681,36 @@ Contact the author at werner@collectio.org
       the way of: outstanding - very good - good - average - damaged - bad</documentation>
     <ref name="description"/>
   </define>
+  <define name="materialclass">
+    <element name="materialclass" ns="http://collectio.org/classifications/">
+      <ref name="genericdata"/>
+    </element>
+  </define>
+  <define name="techniqueclass">
+    <element name="techniqueclass" ns="http://collectio.org/classifications/">
+      <ref name="genericdata"/>
+    </element>
+  </define>
   <define name="tech-data">
     <oneOrMore>
-      <ref name="materialclass-paper"/>
+      <ref name="materialclass"/>
     </oneOrMore>
     <zeroOrMore>
-      <ref name="techniqueclass-prints"/>
+      <ref name="techniqueclass"/>
     </zeroOrMore>
+    <!--    <optional>
+      <element name="extent">
+        <choice>
+          <value>parts</value>
+          <value>fragments</value>
+          <value>volumes</value>
+          <value>pages</value>
+        </choice>
+      </element>
+    </optional>
+-->
     <oneOrMore>
-      <element name="part">
+      <element name="aspect">
         <attribute name="name">
           <data type="token"/>
         </attribute>
@@ -1005,27 +1030,11 @@ Contact the author at werner@collectio.org
       <ref name="general-id"/>
     </attribute>
   </define>
-  <define name="id-head">
-    <attribute name="head" ns="http://www.w3.org/XML/1998/namespace">
-      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">binding the "object" record to a header id</documentation>
+  <define name="parent-id">
+    <attribute name="parentid" ns="http://www.w3.org/XML/1998/namespace">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">linking the record up to a parent id</documentation>
       <ref name="general-id"/>
     </attribute>
   </define>
-  <define name="id-part">
-    <attribute name="part" ns="http://www.w3.org/XML/1998/namespace">
-      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">defining the resource in relation to the header record (for
-        example, "fragment 1", "base", or other short name which identifies the piece)</documentation>
-      <data type="token"/>
-    </attribute>
-  </define>
-  <include href="class/lc_italyV02.rng"/>
-  <include href="class/au_cultureV02.rng"/>
-  <include href="class/au_namesV02.rng"/>
-  <include href="class/mc_writingsupportV02.rng"/>
-  <include href="class/tc_printV02.rng"/>
-  <include href="class/ic_personsV02.rng"/>
-  <include href="class/ic_plastikV02.rng"/>
-  <include href="class/oc_scriptsV02.rng"/>
-  <include href="class/oc_numismaticV02.rng"/>
   <include href="ids/ids.rng"/>
 </grammar>

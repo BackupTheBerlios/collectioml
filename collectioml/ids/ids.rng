@@ -36,7 +36,7 @@
     </define>
     <define name="bhertz-id">
         <data type="NMTOKEN">
-            <param name="pattern">urn:collectio:0002:lib:[0-9]{5}</param>
+          <param name="pattern">urn:collectio:000[1-2]{1}:lib:[\p{IsBasicLatin}]*</param>
         </data>
     </define>
   <define name="marib-id">

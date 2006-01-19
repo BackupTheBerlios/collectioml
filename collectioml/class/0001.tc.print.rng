@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+CollectioML Markup Language for Museum Collections
+
+Copyright (C) 2004-2005 Klaus E. Werner
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Contact the author at werner@collectio.org
+
+-->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0"
+  ns="http://collectio.org/classifications/">
+  <define name="techniqueclass-prints">
+    <element name="techniqueclass">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Coverage: modern times.</documentation>
+      <attribute name="authority">
+        <value>collectio:0001</value>
+      </attribute>
+      <attribute name="coverage">
+        <value>print media</value>
+      </attribute>
+        <element name="method">
+          <choice>
+            <value>aquatint</value>
+            <value>chromolithography</value>
+            <value>engraving</value>
+            <value>etching</value>
+            <value>half-tone</value>
+            <value>letterpress</value>
+            <value>linocut</value>
+            <value>lithography</value>
+            <value>mezzotint</value>
+            <value>offset</value>
+            <value>photolithography</value>
+            <value>silk screen printing</value>
+            <value>xerocopy</value>
+            <value>xylography</value>
+          </choice>
+        </element>
+    </element>
+  </define>
+</grammar>

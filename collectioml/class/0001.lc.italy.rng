@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+CollectioML Markup Language for Museum Collections
+
+Copyright (C) 2004-2005 Klaus E. Werner
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Contact the author at werner@collectio.org
+
+-->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0"
+  ns="http://collectio.org/classifications/">
+  <define name="locationclass-italy">
+    <element name="locationclass" ns="http://collectio.org/classifications/">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Coverage: Italy, modern times.</documentation>
+      <attribute name="authority">
+        <value>collectio:0001</value>
+      </attribute>
+      <attribute name="coverage">
+        <value>Italy</value>
+      </attribute>
+        <element name="region">
+          <choice>
+            <value>Lazio</value>
+            <value>Piemonte</value>
+          </choice>
+        </element>
+        <optional>
+          <element name="city">
+            <choice>
+              <value>Anzio</value>
+              <value>Latina</value>
+              <value>Ostia</value>
+              <value>Roma</value>
+              <value>Tivoli</value>
+              <value>Viterbo</value>
+              <value>Milano</value>
+              <value>Torino</value>
+            </choice>
+          </element>
+        </optional>
+    </element>
+  </define>
+</grammar>
+<!-- the *real* schema follows: -->
+<!-- 
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0"
+  ns="http://collectio.org/classifications/">
+  <define name="locationclass-italy">
+    <element name="locationclass" ns="http://collectio.org/classifications/">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Merely a demo for a cascading classification.</documentation>
+      <attribute name="coveredArea">
+        <value>italy</value>
+      </attribute>
+      <attribute name="coveredTime">
+        <value>modern times</value>
+      </attribute>
+      <element name="country">
+        <value>Italy</value>
+      </element>
+      <choice>
+        <group>
+          <element name="region">
+            <value>Piemonte</value>
+          </element>
+          <optional>
+            <element name="city">
+              <choice>
+                <value ns="string">Torino</value>
+                <value ns="string">Milano</value>
+              </choice>
+            </element>
+          </optional>
+        </group>
+        <group>
+          <element name="region">
+            <value>Lazio</value>
+          </element>
+          <optional>
+            <element name="city">
+              <choice>
+                <value ns="string">Anzio</value>
+                <value ns="string">Latina</value>
+                <value ns="string">Ostia</value>
+                <value ns="string">Roma</value>
+                <value ns="string">Tivoli</value>
+                <value ns="string">Viterbo</value>
+              </choice>
+            </element>
+          </optional>
+        </group>
+      </choice>
+    </element>
+  </define>
+</grammar>
+-->
