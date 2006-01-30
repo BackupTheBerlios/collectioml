@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  
+  CollectioML Markup Language for Museum Collections
+  
+  Copyright (C) 2004-2005 Klaus E. Werner
+  
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+  
+  Contact the author at werner@collectio.org
+  
+-->
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" xmlns="http://relaxng.org/ns/structure/1.0"
+  ns="http://collectio.org/classifications/">
+  <define name="authorship-culture.neareast">
+    <element name="authorclass">
+      <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">Coverage: Mediterranean.</documentation>
+      <attribute name="authority">
+        <value>collectio:0001</value>
+      </attribute>
+      <attribute name="coverage">
+        <value>mediterranean</value>
+      </attribute>
+      <attribute name="type">
+        <choice>
+          <value>general</value>
+          <value>invention</value>
+          <value>execution</value>
+          <value>commission</value>
+        </choice>
+      </attribute>
+      <element name="era">
+        <choice>
+          <value>paleolithic</value>
+          <value>mesolithic</value>
+          <value>neolithic</value>
+          <value>eneolithic</value>
+          <value>bronce age</value>
+          <value>iron age</value>
+          <value>hyksos</value>
+          <value>hellenistic</value>
+          <value>roman</value>
+          <value>byzantine</value>
+          <value>omayyid</value>
+        </choice>
+      </element>
+        <optional>
+          <element name="period">
+            <choice>
+              <value>late</value>
+              <value>middle</value>
+              <value>early</value>
+              <value>republican</value>
+              <value>imperial</value>
+            </choice>
+          </element>
+          <optional>
+            <element name="subperiod">
+              <value>I</value>
+              <value>II</value>
+              <value>III</value>
+              <value>IV</value>
+              <value>sullanic</value>
+              <value>julio-claudian</value>
+              <value>augusteian</value>
+              <value>tiberian</value>
+              <value>claudian</value>
+              <value>neronian</value>
+              <value>flavian</value>
+              <value>trajanic</value>
+              <value>hadrianic</value>
+              <value>antoninian</value>
+              <value>severan</value>
+              <value>gallienic</value>
+              <value>tetrarchic</value>
+              <value>constantinian</value>
+              <value>valentinian</value>
+              <value>theodosian</value>
+            </element>
+            <optional>
+              <element name="qualifier">
+                <value>A</value>
+                <value>B</value>
+                <value>C</value>
+                <value>early</value>
+                <value>middle</value>
+                <value>late</value>
+              </element>
+            </optional>
+          </optional>
+      </optional>
+    </element>
+  </define>
+</grammar>
